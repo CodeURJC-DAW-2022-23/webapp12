@@ -8,7 +8,7 @@ Gabriel Serrano Díaz            g.serranod.2020@alumnos.urjc.es     Gabriel1501
 Jesús Pérez Sánchez             j.perezsa.2020@alumnos.urjc.es      DiosYisus77
 Xavier Medina Salas             jx.medina@alumnos.urjc.es           XdeXavi
 
-#Enlace a Trellop: https://trello.com/b/CVAiUcJD/daw-the-golden-book
+# Enlace a Trello: https://trello.com/b/CVAiUcJD/daw-the-golden-book
 
 ### ENTIDADES
 
