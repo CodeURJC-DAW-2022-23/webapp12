@@ -20,6 +20,7 @@ Xavier Medina Salas             jx.medina@alumnos.urjc.es           XdeXavi
 * Libro
 * Autor
 * Reseña
+* Compra
 
 Relación: Un libro siempre tiene un autor y puede tener una o varias reseñas de los usuarios que compraron el libro.
 
@@ -38,6 +39,7 @@ Relación: Un libro siempre tiene un autor y puede tener una o varias reseñas d
 ### GRAFICOS
 
 Un gráfico de líneas por cada autor registrado en la web, con el Nº de libros vendidos mensualmente.
+
 Un gráfico de barras general con el Nº de ventas mensuales. 
 (...Gráficos adicionales posteriores a Fase 0)
 
