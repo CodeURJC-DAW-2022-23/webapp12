@@ -53,5 +53,5 @@ Habilitar una sección de recomedados para aquellos usuarios que compraron o tie
 (...Requisitos adicionales posteriores a Fase 0)
 
 
-Yei
+
 
