@@ -51,3 +51,7 @@ Opcioón de generación de PDF con el recibo/factura de una compra reciente.
 
 Habilitar una sección de recomedados para aquellos usuarios que compraron o tienen como favoritos a algún autor.
 (...Requisitos adicionales posteriores a Fase 0)
+
+
+Yei
+
