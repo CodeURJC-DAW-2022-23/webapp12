@@ -1,0 +1,10 @@
+.home{
+    margin-left: 10px;
+    width: 100%;
+    height: 10vh; background-color: rgb(255, 255, 255);
+    position: relative;
+
+}
+.Reseñas{
+    float:right;
+}
