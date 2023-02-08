@@ -9,48 +9,50 @@
     <title>Libro The Golden Book</title>
 </head>
 <body>
-    <div id="Container">
-        <div id="home">
-            <h1 id="Cabecera"><img src="images/Logo.png" id="logo" alt=""> The Golden Book </h1>
-            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <div class="container-fluid">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Buscar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Iniciar Sesion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Identificate</a>
-                        </li>
-                    </ul>
-                </div>
-            <br>
-            </nav>
-        </div>
-        <div id="Top">
-            <div id="Libro">
-                <div id="Portada">
-                    <img src="./images/elCaminoDeLosReyes.jpeg" class="fotoPortada" alt="">
-                </div>
-                <div id="InfoLibro">
-                    <div id="Titulo">
-                        <h1>El camino de los reyes</h1>
+    <div id="home">
+        <h1 id="Cabecera"><img src="images/Logo.png" id="logo" alt=""> The Golden Book </h1>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Buscar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Iniciar Sesion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Identificate</a>
+                    </li>
+                </ul>
+            </div>
+        <br>
+        </nav>
+    </div>
+    <div class="book container-fluid">
+        <div class="row" id="Top">
+            <div class="col-10" id="Libro">
+                <div class="row">
+                    <div class="col-5" id="Portada">
+                        <img src="./images/elCaminoDeLosReyes.jpeg" class="fotoPortada" alt="">
                     </div>
-                    <div id="Autor">
-                        <h2>Brandom Sanderson</h2>
-                    </div>
-                    <div id="Genero">
-                        <p>Juvenil</p>
-                        <p>Fantasia</p>
-                    </div>
-                    <div id="Calificacion">
-                        //Estrellitas, tengo que buscar como se hacía
+                    <div class="col-7" id="InfoLibro">
+                        <div id="Titulo">
+                            <h1>El camino de los reyes</h1>
+                        </div>
+                        <div id="Autor">
+                            <h2>Brandom Sanderson</h2>
+                        </div>
+                        <div id="Genero">
+                            <p>Juvenil</p>
+                            <p>Fantasia</p>
+                        </div>
+                        <div class="Calificacion">
+                            //Estrellitas, tengo que buscar como se hacía
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="Precio">
+            <div id="Precio" class="col-2">
                 <div class="Precio">
                     <p>14'95€</p>
                 </div>
@@ -76,8 +78,61 @@
                 <div id="Comentario">
                     <p>Me encantó este libro. ¿Qué más hay que decir?</p>
                 </div>
+                <div class="Calificacion">
+
+                </div>
             </div>
         </div>
+    </div>
+    <div class="flex-container3">
+        <div class="recomendacion">
+            <img src="images/fuego y sangre.jfif" class="libro" alt=""></li>
+            <br>
+            <br>
+            <div class="informacion">
+                <p class="Titulo">Fuego y sangre</p>
+                <p class="Autor">George R.R. Martin</p>
+                <p class="Cantidad">Cantidad: 1</p>
+                <p class="Precio">20,80 €</p>
+            </div>
+        </div>
+        <hr />
+        <div class="recomendacion">
+            <img src="images/harry potter.jpg" class="libro" alt=""></li>
+            <br>
+            <br>
+            <div class="informacion">
+                <p class="Titulo">Harry Potter y el misterio del príncipe</p>
+                <p class="Autor">J.K. Rowling</p>
+                <p class="Cantidad">Cantidad: 1</p>
+                <p class="Precio">20,90 €</p>
+            </div>
+        </div>
+        <hr />
+        <div class="recomendacion">
+            <img src="images/la magia de ser sofia.jpg" class="libro" alt=""></li>
+            <br>
+            <br>
+            <div class="informacion">
+                <p class="Titulo">La magia de ser Sofía</p>
+                <p class="Autor">Elísabet Benavent</p>
+                <p class="Cantidad">Cantidad: 1</p>
+                <p class="Precio">17,95 €</p>
+            </div>
+        </div>
+        <hr />
+        <div class="recomandacion">
+            <img src="images/señor de los anillos.jpg" class="libro" alt=""></li>
+            <br>
+            <br>
+            <div class="informacion">
+                <p class="Titulo">Señor de los anillos. Triología</p>
+                <p class="Autor">J.R.R. Tolkien</p>
+                <p class="Cantidad">Cantidad: 1</p>
+                <p class="Precio">20,95 €</p>
+            </div>
+        </div>
+        <hr />
     </div>
 </body>
 </html>
