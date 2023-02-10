@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./libro.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--Hojas de Estilo-->
+    <link rel="stylesheet" href="./libro.css">
+    <link rel="stylesheet" href="jquery.rateyo.css"/>
+
+    <!--JavaScript-->
+    <script src = "https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity ="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src ="libro.js"></script>
+    <script src ="jquery.rateyo.js"></script>
+
     <title>Libro The Golden Book</title>
 </head>
 <body>
@@ -42,27 +51,28 @@
                         <div id="Autor">
                             <h2>Brandom Sanderson</h2>
                         </div>
-                        <div id="Genero">
-                            <p>Juvenil</p>
-                            <p>Fantasia</p>
+                        <div id="clasificacion row">
+                            <div class="genero col-2">Fantasia</div>
+                            <div class="genero col-2">Juvenil</div>
+
+                            <div class="Calificacion col-10">
+                                <p property='ratingValue' typeof='text' class= "nValoracion" id="nValoracion1">2.5</p>
+                            </div>
                         </div>
-                        <div class="Calificacion">
-                            //Estrellitas, tengo que buscar como se hacía
-                        </div>
+                        
                     </div>
                 </div>
             </div>
-            <div id="Precio" class="col-2">
-                <div class="Precio">
-                    <p>14'95€</p>
-                </div>
-                <div id="Añadir"> 
-                    <button type="button" class="btn btn-success">Añadir a la cesta</button>
-                </div>
+            <div id="comprar" class="col-2">
+                    <p id="precio">14'95 €</p>
+                    <button class="boton" id="cesta" type="button">Añadir a Cesta</button>
+                    <button class="boton" id="favorito" type="button">Favoritos</button>
+                    <button class="boton" id="añadirReseña" type="button">Añadir Reseña</button>     
             </div>
         </div>
         <div id="Info">
             <div id="Sinopsis">
+                <h3>Sinopsis</h3>
                 <p>Anhelo los días previos a la Última Desolación.
                     Los días en que los Heraldos nos abandonaron y los Caballeros Radiantes se giraron en nuestra contra. Un tiempo en que aún había magia en el mundo y honor en el corazón de los hombres.
                     El mundo fue nuestro, pero lo perdimos. Probablemente no hay nada más estimulante para las almas de los hombres que la victoria.                
@@ -71,15 +81,29 @@
                     El mundo puede cambiar. La potenciación y el uso de las esquirlas pueden aparecer de nuevo, la magia de los días pasados puede volver a ser nuestra. Esas cuatro personas son la clave.
                     Una de ellas nos redimirá. Y una de ellas nos destruirá.</p>
             </div>
-            <div id="Reseñas">
-                <div id="Usuario">
-                    <p>Patrick Rothfuss</p>
+            <h3>Reseñas</h3>
+            <div class="conjuntoReseñas">
+                <div class="reseña">
+                    <div class="Calificacion">
+                        Estrellitas que aun no he puesto
+                    </div>
+                    <div id="Comentario">
+                        <p>Me encantó este libro. ¿Qué más hay que decir?</p>
+                    </div>
+                    <div id="Usuario">
+                        <p>Patrick Rothfuss</p>
+                    </div>
                 </div>
-                <div id="Comentario">
-                    <p>Me encantó este libro. ¿Qué más hay que decir?</p>
-                </div>
-                <div class="Calificacion">
-
+                <div class="reseña">
+                    <div class="Calificacion">
+                        Estrellitas que aun no he puesto
+                    </div>
+                    <div id="Comentario">
+                        <p>Es raro que un escritor de ficción comprenda tan bien cómo funciona el liderazgo y cómo el amor echa raíces en el corazón humano. Sanderson es sorprendentemente sabio.</p>
+                    </div>
+                    <div id="Usuario">
+                        <p>Orson Scott Card</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -121,7 +145,7 @@
             </div>
         </div>
         <hr />
-        <div class="recomandacion">
+        <div class="recomendacion">
             <img src="images/señor de los anillos.jpg" class="libro" alt=""></li>
             <br>
             <br>
