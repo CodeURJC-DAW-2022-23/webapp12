@@ -1,0 +1,69 @@
+*{
+    padding: 10;
+    box-sizing: border-box;
+    color:  hwb(57 1% 59%);    
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    align-content: center;
+    justify-content: center;
+}
+.home{
+    background-attachment: fixed;
+    margin-left: 10px;
+    width: 100%;
+    height: 10vh; background-color: rgb(255, 255, 255);
+    margin-bottom: 60px;
+    position: relative;
+    
+}
+.logo{
+    width: 150px;
+    height: 100px;
+}
+.flex-container1{
+    background-image: url(images/fondo\ novedades.avif);
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-content: center;
+    border-radius: 15;
+    border-style: solid;
+}
+.libros-novedades{
+    width: 300px;
+}
+.fondo-final{
+    width: 1000px;
+}
+.flex-container-novedades{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+}
+.flex-container-novedades div{    
+    padding: 10px;
+}
+.libro{
+    width: 300px;
+    height: 400px;
+}
+.informacion{ 
+    text-align: center;
+    font-weight: bold;
+    border-style: solid;
+}
+.button2{
+    border: none;
+    width: 120px;
+    color: white;
+    font-size: 20px;
+    background: hwb(129 6% 37%);
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
