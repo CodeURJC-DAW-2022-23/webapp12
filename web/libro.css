@@ -60,7 +60,9 @@
 
 .genero{
     border-radius: 10px;
-    background-color: #d4ff00;
+    margin-bottom: 5px;
+    background-color: #176100;
+    color: white;
 }
 
 #Info{
@@ -135,29 +137,7 @@
     height: 400px;
 }
 
-.stars-outer {
-    display: inline-block;
-    position: relative;
-    font-family: FontAwesome;
-  }
-  
-.stars-outer::before {
-    content: "\f006 \f006 \f006 \f006 \f006";
+.rateYo{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
-  
-.stars-inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-}
-  
-.stars-inner::before {
-    content: "\f005 \f005 \f005 \f005 \f005";
-    color: #f8ce0b;
-}
-  
-
-

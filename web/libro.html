@@ -7,13 +7,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!--Hojas de Estilo-->
-    <link rel="stylesheet" href="./libro.css">
+    <link rel="stylesheet" href="libro.css">
     <link rel="stylesheet" href="jquery.rateyo.css"/>
 
     <!--JavaScript-->
     <script src = "https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity ="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src ="libro.js"></script>
+    <script src="neon_text.js"></script>
     <script src ="jquery.rateyo.js"></script>
+
 
     <title>Libro The Golden Book</title>
 </head>
@@ -70,9 +72,9 @@
                         <div id="clasificacion row">
                             <div class="genero col-2">Fantasia</div>
                             <div class="genero col-2">Juvenil</div>
-
-                            <div class="Calificacion col-10">
-                                <p property='ratingValue' typeof='text' class= "nValoracion" id="nValoracion1">2.5</p>
+                            <div class="calificacion col-4">
+                                <div class="rateYo" id="rateYo1"></div>
+                                <p property='ratingValue' typeof='text' class= "nValoracion" id="nValoracion1">4.7</p>
                             </div>
                         </div>
                         
@@ -101,7 +103,8 @@
             <div class="conjuntoReseñas">
                 <div class="reseña">
                     <div class="Calificacion">
-                        Estrellitas que aun no he puesto
+                        <div class="rateYo" id="rateYo2"></div>
+                            <p property='ratingValue' typeof='text' class= "nValoracion" id="nValoracion2">4.5</p>
                     </div>
                     <div id="Comentario">
                         <p>Me encantó este libro. ¿Qué más hay que decir?</p>
@@ -112,7 +115,10 @@
                 </div>
                 <div class="reseña">
                     <div class="Calificacion">
-                        Estrellitas que aun no he puesto
+                        <div class="Calificacion">
+                            <div class="rateYo" id="rateYo3"></div>
+                                <p property='ratingValue' typeof='text' class= "nValoracion" id="nValoracion3">5</p>
+                        </div>
                     </div>
                     <div id="Comentario">
                         <p>Es raro que un escritor de ficción comprenda tan bien cómo funciona el liderazgo y cómo el amor echa raíces en el corazón humano. Sanderson es sorprendentemente sabio.</p>
