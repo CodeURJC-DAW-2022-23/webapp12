@@ -17,12 +17,12 @@ body {
     backface-visibility: hidden;
 }
 
-.home {
+#home {
     margin-left: 10px;
     width: 100%;
     height: 10vh;
     background-color: rgb(255, 255, 255);
-    margin-bottom: 60px;
+    position: relative;
 }
 
 .logo {
@@ -46,9 +46,15 @@ body {
     border-style: double;
 }
 
-    .flex-container1 div {
-        margin: 10px;
-    }
+.author{
+    position:relative;
+    margin-top: 120px;
+    margin-bottom: 20px;
+}
+
+.flex-container1 div {
+    margin: 10px;
+}
 
 .flex-container2 {
     display: flex;
@@ -64,9 +70,25 @@ body {
     justify-content: center;
 }
 
-    .flex-container3 div {
-        padding: 10px;
-    }
+.flex-container3 div {
+    padding: 10px;
+}
+
+.botonAdmin{
+    background-color: #ff2121;
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.botonesAdmin:active{
+    background-color: #ef5858;
+}
 
 .libro {
     width: 300px;

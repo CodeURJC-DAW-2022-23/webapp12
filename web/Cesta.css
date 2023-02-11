@@ -24,10 +24,12 @@ body{
     position: relative;
     
 }
+
 #Cabecera{
     height: 100px;
 }
-.logo{
+
+#logo{
     width: 150px;
     height: 100px;
 }

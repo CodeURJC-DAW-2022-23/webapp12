@@ -20,10 +20,27 @@ body{
     position: relative;
     
 }
-.logo{
+#logo{
     width: 150px;
     height: 100px;
 }
+
+.botonAdmin{
+    background-color: #ff2121;
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.botonesAdmin:active{
+    background-color: #ef5858;
+}
+
 .flex-container1{
     background-image: url(images/fondo\ novedades.avif);
     display: flex;
