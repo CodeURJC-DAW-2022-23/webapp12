@@ -34,7 +34,7 @@ Relación: Un libro siempre tiene un autor y puede tener una o varias reseñas d
 
 * Usuario Registrado: Cada uno puede modificar su imagen de perfil.
 * Libro: Cada libro lleva asociada una portada.
-* Autor: Si el autor no es anónimo y se conoce su apariencia se incluye tambíen una iamgen.
+* Autor: Si el autor no es anónimo y se conoce su apariencia se incluye también una imagen.
 
 ### GRAFICOS
 
@@ -46,8 +46,8 @@ Un gráfico de barras general con el Nº de ventas mensuales.
 
 ### TECNOLOGÍA COMPLEMENTARIA
 
-Envio de correo de confirmacion a los usuraios que se registren en la web.
-Opcioón de generación de PDF con el recibo/factura de una compra reciente.
+Envio de correo de confirmación a los usuraios que se registren en la web.
+Opción de generación de PDF con el recibo/factura de una compra reciente.
 
 ### ALGORITMO O CONSULTA AVANZADA
 
