@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+
+}
+
+#home{
+    margin-left: 10px;
+    width: 100%;
+    height: 10vh; 
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+.Cabecera{
+    height: 100px;
+}
+
+#logo{
+    width: 150px;
+    height: 100px;
+}
+
+
+h1{
+    text-align: center;
+    color:  hwb(60 0% 96%);
+    font-size: 40px;
+}
+
+input[type ="text"]{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+    align-items: center;
+}
+.input-contenedor{
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+
+.form-title {
+    background-color: darkolivegreen;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    margin-top:125px;
+    border:2px solid black;
+    border-radius:10px
+}
+
+
+.container-button{
+    text-align:center;
+    position:relative;
+    top:100px
+}
+.button{
+    border:1px solid black;
+    border-radius:5px;
+}
+#accept{
+    background-color: darkolivegreen;
+    color:white;
+}
