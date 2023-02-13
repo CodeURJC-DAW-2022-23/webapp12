@@ -96,8 +96,9 @@ Habilitar una sección de recomedados para aquellos usuarios que compraron o tie
  
  
 
-  ![DIAGRAMA DAW COMPLETO](https://user-images.githubusercontent.com/123741250/218404801-2f3e19d2-d576-4f8e-bd3b-7f246f18c3af.png)
 
+
+![diagram de navegacion completo](https://user-images.githubusercontent.com/123741250/218428540-8080e049-ea30-4d82-8f57-f911f9dae78c.png)
 
  
 
