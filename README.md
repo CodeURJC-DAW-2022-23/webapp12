@@ -90,9 +90,14 @@ Habilitar una sección de recomedados para aquellos usuarios que compraron o tie
 * Añadir/Modificar Autor: Pantalla desde la cual un administrador puede introducir un nuevo autor en la base de datos de la página para mostrarlo al resto de usuarios. Debe introducir: "Nombre", "Apellidos", "Información" (acerca del autor y su biografía) y una foto que represente al autor. Tras haber realizado estos pasos, debes pulsar "Aceptar" y los cambios serán guardados. 
 ![modificacion autor](https://user-images.githubusercontent.com/123741250/218403928-c6e4f8b7-0938-4a13-8ea0-d2ffb85152c2.png)
 
+
+
+ *Diagrama de navegación
+ 
  
 
-  
+  ![DIAGRAMA DAW COMPLETO](https://user-images.githubusercontent.com/123741250/218404801-2f3e19d2-d576-4f8e-bd3b-7f246f18c3af.png)
+
 
  
 
