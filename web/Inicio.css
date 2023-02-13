@@ -11,7 +11,7 @@ body{
     align-content: center;
     justify-content: center;
 }
-.home{
+#home{
     background-attachment: fixed;
     margin-left: 10px;
     width: 100%;
@@ -83,4 +83,9 @@ body{
     padding: 15px 20px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.rateYo{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
