@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>es.codeurjc</groupId>
-	<artifactId>The Golden Book</artifactId>
+	<artifactId>The-Golden-Book</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>The Golden Book</name>
 	<description>Demo project for Spring Boot</description>
