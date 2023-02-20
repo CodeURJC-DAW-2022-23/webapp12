@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Hojas de Estilo-->
-    <link rel="stylesheet" href="libro.css">
-    <link rel="stylesheet" href="jquery.rateyo.css"/>
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="jquery.rateyo.css">
+    <link rel="stylesheet" href="estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!--JavaScript-->
@@ -16,16 +16,16 @@
     <script src ="jquery.rateyo.js"></script>
 
 
-    <title>Libro The Golden Book</title>
+    <title>Book</title>
 </head>
 <body>
-    <div id="home">
-        <h1 id="Cabecera"><img src="images/Logo.png" id="logo" alt=""> The Golden Book </h1>
+    <div class="home">
+        <h1 id="header"><img src="images/Logo.png" class="logo" alt=""> The Golden Book </h1>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="Inicio.html">Inicio</a>
+                        <a class="nav-link" href="home.html">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Buscar</a>
@@ -34,17 +34,17 @@
                         <a class="nav-link" href="Login.html">Iniciar Sesion</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Registro.html">Registrarse</a>
+                        <a class="nav-link" href="register.html">Registrarse</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Cesta.html">Cesta</a>
+                        <a class="nav-link" href="cart.html">Cesta</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="perfil.html">Perfil</a>
+                        <a class="nav-link" href="Profile.html">Perfil</a>
                     </li>
                     <li class="admin">
-                        <a href="modificacionLibro.html">
-                            <button class="botonAdmin">Modificar Libro</button>
+                        <a href="modifyBook.html">
+                            <button class="buttonAdmin">Modificar Libro</button>
                         </a>
                     </li>
                     <li class="admin">
@@ -56,10 +56,10 @@
     </div>
     <div class="book container-fluid">
         <div class="row" id="Top">
-            <div class="col-10" id="Libro">
+            <div class="col-10" id="book">
                 <div class="row">
-                    <div class="col-5" id="Portada">
-                        <img src="./images/elCaminoDeLosReyes.jpeg" class="fotoPortada" alt="">
+                    <div class="col-5" class="portrait">
+                        <img src="./images/elCaminoDeLosReyes.jpeg" class="portrait" alt="">
                     </div>
                     <div class="col-7" id="InfoLibro">
                         <div id="Titulo">
@@ -69,8 +69,8 @@
                             <h2>Brandom Sanderson</h2>
                         </div>
                         <div id="clasificacion row">
-                            <div class="genero col-2">Fantasia</div>
-                            <div class="genero col-2">Juvenil</div>
+                            <div class="genre col-2">Fantasia</div>
+                            <div class="genre col-2">Juvenil</div>
                             <div class="calificacion col-4">
                                 <div class="rateYo" id="rateYo1"></div>
                                 <p property='ratingValue' typeof='text' class= "nValoracion" id="nValoracion1">4.7</p>
@@ -80,14 +80,14 @@
                     </div>
                 </div>
             </div>
-            <div id="comprar" class="col-2">
-                    <p id="precio">14'95 €</p>
-                    <button class="boton" id="cesta" type="button">Añadir a Cesta</button>
-                    <button class="boton" id="favorito" type="button">Favoritos</button>
-                    <button class="boton" id="añadirReseña" type="button">Añadir Reseña</button>     
+            <div id="buy" class="col-2">
+                    <p id="price">14'95 €</p>
+                    <button class="button" id="cart" type="button">Añadir a Cesta</button>
+                    <button class="button" id="favorite" type="button">Favoritos</button>
+                    <button class="button" id="addReview" type="button">Añadir Reseña</button>     
             </div>
         </div>
-        <div id="Info">
+        <div id="info">
             <div id="Sinopsis">
                 <h3>Sinopsis</h3>
                 <p>Anhelo los días previos a la Última Desolación.
@@ -99,8 +99,8 @@
                     Una de ellas nos redimirá. Y una de ellas nos destruirá.</p>
             </div>
             <h3>Reseñas</h3>
-            <div class="conjuntoReseñas">
-                <div class="reseña">
+            <div class="reviewSet">
+                <div class="review">
                     <div class="Calificacion">
                         <div class="rateYo" id="rateYo2"></div>
                             <p property='ratingValue' typeof='text' class= "nValoracion" id="nValoracion2">4.5</p>
@@ -112,7 +112,7 @@
                         <p>Patrick Rothfuss</p>
                     </div>
                 </div>
-                <div class="reseña">
+                <div class="review">
                     <div class="Calificacion">
                             <div class="rateYo" id="rateYo3"></div>
                                 <p class= "nValoracion" id="nValoracion3">5</p>
@@ -127,52 +127,52 @@
             </div>
         </div>
     </div>
-    <div class="flex-container3">
-        <div class="recomendacion">
-            <img src="images/fuego y sangre.jfif" class="libro" alt=""></li>
+    <div class="recomendationSet flex-container">
+        <div class="recomendation">
+            <img src="images/fuego y sangre.jfif" class="portrait" alt=""></li>
             <br>
             <br>
-            <div class="informacion">
+            <div class="information">
                 <p class="Titulo">Fuego y sangre</p>
                 <p class="Autor">George R.R. Martin</p>
                 <p class="Cantidad">Cantidad: 1</p>
-                <p class="Precio">20,80 €</p>
+                <p class="price">20,80 €</p>
             </div>
         </div>
         <hr />
-        <div class="recomendacion">
-            <img src="images/harry potter.jpg" class="libro" alt=""></li>
+        <div class="recomendation">
+            <img src="images/harry potter.jpg" class="portrait" alt=""></li>
             <br>
             <br>
-            <div class="informacion">
+            <div class="information">
                 <p class="Titulo">Harry Potter y el misterio del príncipe</p>
                 <p class="Autor">J.K. Rowling</p>
                 <p class="Cantidad">Cantidad: 1</p>
-                <p class="Precio">20,90 €</p>
+                <p class="price">20,90 €</p>
             </div>
         </div>
         <hr />
-        <div class="recomendacion">
-            <img src="images/la magia de ser sofia.jpg" class="libro" alt=""></li>
+        <div class="recomendation">
+            <img src="images/la magia de ser sofia.jpg" class="portrait" alt=""></li>
             <br>
             <br>
-            <div class="informacion">
+            <div class="information">
                 <p class="Titulo">La magia de ser Sofía</p>
                 <p class="Autor">Elísabet Benavent</p>
                 <p class="Cantidad">Cantidad: 1</p>
-                <p class="Precio">17,95 €</p>
+                <p class="price">17,95 €</p>
             </div>
         </div>
         <hr />
-        <div class="recomendacion">
-            <img src="images/señor de los anillos.jpg" class="libro" alt=""></li>
+        <div class="recomendation">
+            <img src="images/señor de los anillos.jpg" class="portrait" alt=""></li>
             <br>
             <br>
-            <div class="informacion">
+            <div class="information">
                 <p class="Titulo">Señor de los anillos. Triología</p>
                 <p class="Autor">J.R.R. Tolkien</p>
                 <p class="Cantidad">Cantidad: 1</p>
-                <p class="Precio">20,95 €</p>
+                <p class="price">20,95 €</p>
             </div>
         </div>
         <hr />
