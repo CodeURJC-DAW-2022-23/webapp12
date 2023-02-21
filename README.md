@@ -92,7 +92,7 @@ Habilitar una sección de recomedados para aquellos usuarios que compraron o tie
 
 
 
- *probando
+*Diagrama de Navegación
  
  
 
