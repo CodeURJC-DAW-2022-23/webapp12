@@ -11,8 +11,13 @@ public class book {
     @Id
     private String title;
 
-    
+    //Clave ajena para autor
     private String author;
+
+    private int stock;
+    private int price;
+    private String sinopsis;
+
     public book() {
 	}
 
@@ -34,5 +39,29 @@ public class book {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getSinopsis() {
+        return sinopsis;
+    }
+
+    public void setSinopsis(String sinopsis) {
+        this.sinopsis = sinopsis;
     }
 }
