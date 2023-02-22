@@ -1,44 +1,59 @@
 package es.codeurjc.hellowordvscode.model;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
-import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
+
 @Entity
-@Table(name = "books")
-public class book {
+@Table (name = "bookTable")
+public class book  implements Serializable{
 
-    @Id
-    private String title;
+    @EmbeddedId
+    private bookTitleAuthor BookTitleAuthor;
 
-    //Clave ajena para autor
-    private String author;
-
+    @Column
     private int stock;
+
+    @Column
     private int price;
-    private String sinopsis;
+
+    @Column
+    private String synopsis;
+
+    @ManyToOne
+    private author Author;
+    
+    @OneToMany (mappedBy = "Book")
+    private List<review> Reviews;
+
+    @ManyToMany
+    private List<shell> Shell;
 
     public book() {
-	}
-
-	public book(String title, String author) {
-		this.title = title;
-		this.author = author;
-	}
-    public String getAuthor() {
-        return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public book(bookTitleAuthor bookTitleAuthor, int stock, int price, String synopsis) {
+        BookTitleAuthor = bookTitleAuthor;
+        this.stock = stock;
+        this.price = price;
+        this.synopsis = synopsis;
     }
 
-    public String getTitle() {
-        return title;
+    public bookTitleAuthor getBookTitleAuthor() {
+        return BookTitleAuthor;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setBookTitleAuthor(bookTitleAuthor bookTitleAuthor) {
+        BookTitleAuthor = bookTitleAuthor;
     }
 
     public int getStock() {
@@ -57,11 +72,11 @@ public class book {
         this.price = price;
     }
 
-    public String getSinopsis() {
-        return sinopsis;
+    public String getSynopsis() {
+        return synopsis;
     }
 
-    public void setSinopsis(String sinopsis) {
-        this.sinopsis = sinopsis;
+    public void setSynopsis(String synopsis) {
+        this.synopsis = synopsis;
     }
 }
