@@ -46,18 +46,19 @@
                         <li class="nav-item">
                             <a class="nav-link" href="perfil.html">Perfil</a>
                         </li>
-                            {{#admin}}
-                            <li class="admin">
-                            <a href="modificacionLibro.html">
-                                <button class="botonAdmin">Añadir Libro</button>
+                        {{#admin}}
+                        <li class="admin">
+                        <a href="modificacionLibro.html">
+                            <button class="botonAdmin">Añadir Libro</button>
+                        </a>
+                        </li>
+                        <li class="admin">
+                            <a href="modificacionAutor.html">
+                            <button class="botonAdmin">Añadir Autor</button>
                             </a>
-                            </li>
-                            <li class="admin">
-                                <a href="modificacionAutor.html">
-                                <button class="botonAdmin">Añadir Autor</button>
-                                </a>
-                            {{/admin}}
-                        </li>                     
+                        
+                        </li>  
+                        {{/admin}}                   
                         {{/logged}}
                     </ul>
                 </div>
