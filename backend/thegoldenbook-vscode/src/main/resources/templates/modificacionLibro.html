@@ -1,0 +1,28 @@
+{{>header}}    
+    <form class="formulario">
+
+        <h1>Añadir/Modificar Libro</h1>
+        <div class="contenedor">
+            <div class="input-contenedor ">
+                <input type="text" value="{{book.title}}" placeholder="Titulo">
+            </div>
+            <div class="input-contenedor">
+                <input type="text" value="{{book.price}}" placeholder="Precio">
+            </div>
+
+            <div class="input-contenedor">
+                <input type="text" value="{{book.author}}" placeholder="Autor">
+            </div>
+            <div class="input-contenedor">
+                <input type="text" value="{{book.Sinopis}}" placeholder="Sinopis">
+            </div>
+            <div class="input-contenedor">
+                <input type="text" value="{{book.amount}}" placeholder="Cantidad">
+            </div>
+            <div class="col-12">
+                <label for="myfile">Imagen:</label>
+                <input type="file" id="myfile" name="myfile" accept=".jpg">
+            </div>
+        </div>
+    </form>
+{{>Footer}}
