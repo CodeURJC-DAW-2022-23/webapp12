@@ -1,0 +1,38 @@
+{{>header}}
+
+    <h1>NOVEDADES</h1>
+    <br>
+    <hr/>
+    <div class="flex-container-novedades">
+            <ul class="new-items">
+                {{#books}}
+                <li><a href="/books/{{id}}">{{title}}</a></li>
+                {{/books}}
+        </ul>
+    </div>
+    <h1>MÁS LEÍDOS</h1>
+    <br>
+    <hr/>
+    <div class="flex-container-novedades">
+        <ul class="read-items">
+            {{#books}}
+            <li><a href="/books/{{id}}">{{title}}</a></li>
+            {{/books}}
+        </ul>
+    <br>
+    <hr/>
+    {{#lloged}}
+    <h1>RECOMENDADOS PARA TI</h1>
+    <br>
+    <hr/>
+    <div class="flex-container-novedades">
+        <ul class="recommended-items">
+            {{#books}}
+            <li><a href="/books/{{id}}">{{title}}</a></li>
+            {{/books}}
+    </ul>
+    {{/logged}}
+    <img src="images/fondo-inicio.jpg" class="fondo-final" alt="">
+
+{{>footer}}
+

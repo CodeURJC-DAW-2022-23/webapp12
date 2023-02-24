@@ -1,0 +1,18 @@
+{{>header}}
+
+    <div class="profile-container">
+        {{#perfil.image}}
+        <img src="/perfil/{{perfil.id}}/image">
+        {{^perfil.image}}
+        <img src="/images/no_image.png">
+        {{/perfil.image}}
+        {{/perfil.image}}    <h1>Tu perfil</h1>
+    <p>Nombre: {{perfil.name}}</p>
+    <p>Correo electrónico: {{perfil.email}}</p>
+    <p>Dirección: {{perfil.address}}</p>
+    <p>Número de télefono: {{perfil.tlf}}</p>
+    <p>Géneros favoritos: {{perfil.genre}}</p>
+    </div>
+    <hr/>
+
+{{>footer}}
