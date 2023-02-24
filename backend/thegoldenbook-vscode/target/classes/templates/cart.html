@@ -1,0 +1,34 @@
+{{>header}}
+
+    <div class="flex-container" id="cartHeader">
+        <div>
+            <img src="images/carrito.webp" class="cartImage" alt="">
+        </div> 
+        <div>   
+            <br>
+            <a class="nav-link" href="Cesta.html"><h1>Tu carrito de compra</h1></a>
+        </div>    
+        <br>
+        <div>
+            <input type="submit" value="Anular Cesta" class="button" id="deleteBook">
+        </div>
+    </div>
+    <hr/>
+    <div class="recomendationSet flex-container">
+        <ul class="sell-items">
+            {{#books}}
+            <li><a href="/books/{{id}}">{{title}}</a></li>
+            <p>{{book.amount}}</p>
+            <input type="submit" value="Eliminar" class="button" id="deleteBook">
+            {{/books}}           
+        </ul>   
+    </div>
+    <div class="totalPrice flex-container"></div>
+            <h1 class="total">Total: getTotal</h1>
+            <input type="submit" value="Comprar" class="button" id="shell">
+        </div>
+    <hr>
+
+
+
+{{>footer}}
