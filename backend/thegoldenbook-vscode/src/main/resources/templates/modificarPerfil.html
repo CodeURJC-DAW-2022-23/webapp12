@@ -1,0 +1,33 @@
+<h1 class="form-title">Modificar Perfil</h1>
+<div class="container-fluid">
+    <form class="row" action="/action_page.php">
+    <div class="input-contenedor">
+        <input type="text" value="{{perfil.name}}" placeholder="Nombre">
+    </div>
+    <div class="input-contenedor">
+        <input type="text" value="{{perfil.email}}" placeholder="Correo electrónico">
+    </div>
+    <div class="input-contenedor">
+        <input type="text" value="{{perfil.password}}" placeholder="Nueva contraseña">
+    </div>
+    <div class="input-contenedor">
+        <input type="text" value="{{perfil.direction}}" placeholder="Dirección">
+    </div>
+    <div class="input-contenedor">
+        <input type="text" value="{{perfil.tlf}}" placeholder="Número de teléfono">
+    </div>
+    <div class="input-contenedor">
+        <input type="text" value="{{perfil.genres}}" placeholder="Géneros favoritos">
+    </div>
+    <div class="col-12">
+        <label for="myfile">Imagen de perfil:</label>
+        <input type="file" id="myfile" name="myfile" accept=".jpg">
+    </div>
+    <div class="col-6 container-button">
+        <input type="button" value="Cancelar" class="button" id="cancel" onclick="window.location.href='perfil.html'">
+        </div>
+    <div class="col-6 container-button">
+        <input type="button" value="Modificar" class="button" id="accept" onclick="window.location.href='perfil.html'">
+        </div>
+    </form>
+</div>
