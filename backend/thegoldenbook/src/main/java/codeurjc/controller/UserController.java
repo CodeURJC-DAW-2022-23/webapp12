@@ -76,6 +76,7 @@ public class UserController {
         model.addAttribute("authorModification", user_repository.findAll());
             return "authorModification";
     }
+    // he devuelto todos los templtes de momento no difrenciamos tipo de usarios
     
 
 
