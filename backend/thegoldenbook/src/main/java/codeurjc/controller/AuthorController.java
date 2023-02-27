@@ -15,14 +15,16 @@ public class AuthorController{
     @Autowired
     private AuthorRepository author_repository;
 
+    @Override
+    public void run(String.)
+    @GetMapping("/modifyAuthor")
+    public String modifyAuthor(Model model){
+        return "modifyAuthor";
+    }
     @GetMapping("/author")
     public String author(Model model){
-        Optional<Author> author = author_repository.findByLastName("King");
-        
-        if(author.isPresent()){
-            model.addAttribute("author", author.get());
-        }
-
+        model.addAttribute("name","Stephen King");
+        model.addAttribute("info", "text");
         return "author";
     }
 }

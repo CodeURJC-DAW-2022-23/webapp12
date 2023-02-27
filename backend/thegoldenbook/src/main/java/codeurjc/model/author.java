@@ -24,6 +24,10 @@ public class Author{
 
 	@Override
 	public String toString() {
+<<<<<<< HEAD
+=======
+		// TODO Auto-generated method stubLLL
+>>>>>>> 605bcf759214998af4733c1f5bddc61bdb99c19d
 		return super.toString();
 	}
 
