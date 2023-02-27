@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity 
 @Table(name = "ReviewTable")
-public class review implements Serializable  {
+public class Review implements Serializable  {
 
 
     @EmbeddedId
@@ -28,10 +28,10 @@ public class review implements Serializable  {
     @ManyToOne
     private book Book;
 
-    public review() {
+    public Review() {
     }
 
-    public review(reviewUserBook reviewUserBook, int calification, String text) {
+    public Review(reviewUserBook reviewUserBook, int calification, String text) {
         ReviewUserBook = reviewUserBook;
         this.calification = calification;
         Text = text;
