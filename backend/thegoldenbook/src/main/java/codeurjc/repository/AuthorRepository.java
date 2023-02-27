@@ -9,5 +9,5 @@ import codeurjc.model.Author;
 
 public interface AuthorRepository extends JpaRepository<Author, Long> {
     Optional<Author> findByLastName(String lastName);
-    List<Author> findByFistName(String firstName);
+    List<Author> findByFirstName(String firstName);
 }
