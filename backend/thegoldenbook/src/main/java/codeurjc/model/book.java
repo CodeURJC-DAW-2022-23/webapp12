@@ -30,7 +30,7 @@ public class book  implements Serializable{
     private String synopsis;
 
     @ManyToOne
-    private author Author;
+    private Author Author;
     
     @OneToMany (mappedBy = "Book")
     private List<review> Reviews;
