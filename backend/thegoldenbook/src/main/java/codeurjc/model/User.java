@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity (name = "User")
+@Entity 
 public class User {
 
     @Id
@@ -23,21 +23,30 @@ public class User {
 
     
 
-    @OneToMany(mappedBy = "User")
-    private List<Review> reviews;
+   // @OneToMany(mappedBy = "User")
+    //private List<Review> reviews;
 
     public User() {
     }
 
-    public User(String name, String email, String adress, Long phoneNumber, String favoriteGenre,
-            String password) {
+
+
+
+
+    public User(String name, String email, String adress, Long phoneNumber, String password, String favoriteGenre) {
         this.name = name;
         this.email = email;
         this.adress = adress;
         this.phoneNumber = phoneNumber;
-        this.favoriteGenre = favoriteGenre;
         this.password = password;
+        this.favoriteGenre = favoriteGenre;
     }
+
+
+
+
+
+
 
 
     public String getName() {
