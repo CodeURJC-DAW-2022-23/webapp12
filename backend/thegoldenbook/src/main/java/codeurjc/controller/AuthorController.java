@@ -15,8 +15,6 @@ public class AuthorController{
     @Autowired
     private AuthorRepository author_repository;
 
-    @Override
-    public void run(String.)
     @GetMapping("/modifyAuthor")
     public String modifyAuthor(Model model){
         return "modifyAuthor";
