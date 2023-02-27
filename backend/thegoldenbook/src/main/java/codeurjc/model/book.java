@@ -6,55 +6,46 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
 
 @Entity
-@Table (name = "bookTable")
-public class book  implements Serializable{
+@Table (name = "Book")
+public class Book{
 
-    @EmbeddedId
-    private bookTitleAuthor BookTitleAuthor;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
-    @Column
+    private String title;
     private int stock;
-
-    @Column
     private int price;
-
-    @Column
+    private int rateYO;
+    private int nValoracion;
     private String synopsis;
-
-    @ManyToOne
-    private Author Author;
     
     @OneToMany (mappedBy = "Book")
-    private List<review> Reviews;
+    private List<Review> Reviews;
 
-    @ManyToMany
-    private List<shell> Shell;
+    @OneToOne (mappedBy = "Book")
+    private Author author;
 
-    public book() {
-    }
+    public Book() {}
+    
 
-    public book(bookTitleAuthor bookTitleAuthor, int stock, int price, String synopsis) {
-        BookTitleAuthor = bookTitleAuthor;
+    public Book(String title, int stock, int price, int rateYO, int nValoracion, String synopsis){
         this.stock = stock;
         this.price = price;
         this.synopsis = synopsis;
-    }
-
-    public bookTitleAuthor getBookTitleAuthor() {
-        return BookTitleAuthor;
-    }
-
-    public void setBookTitleAuthor(bookTitleAuthor bookTitleAuthor) {
-        BookTitleAuthor = bookTitleAuthor;
-    }
+    }   
 
     public int getStock() {
         return stock;
@@ -78,6 +69,5 @@ public class book  implements Serializable{
 
     public void setSynopsis(String synopsis) {
         this.synopsis = synopsis;
-    }
+    }  
 }
-
