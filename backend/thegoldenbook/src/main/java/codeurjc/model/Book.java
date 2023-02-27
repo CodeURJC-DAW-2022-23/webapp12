@@ -12,7 +12,6 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table (name = "Book")
 public class Book{
 
     @Id
@@ -26,11 +25,11 @@ public class Book{
     private int Valoracion;
     private String synopsis;
     
-    @OneToMany (mappedBy = "Book")
+    /*@OneToMany (mappedBy = "Book")
     private List<Review> Reviews;
 
     @OneToOne (mappedBy = "Book")
-    private Author author;
+    private Author author;*/
 
     public Book() {}
     
@@ -41,7 +40,7 @@ public class Book{
         this.price = price;
         this.synopsis = synopsis;
     }  
-     
+
     public String getTitle() {
         return title;
     }
