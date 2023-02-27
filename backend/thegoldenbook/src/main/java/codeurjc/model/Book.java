@@ -36,6 +36,7 @@ public class Book{
     
 
     public Book(String title, int stock, int price, int rateYO, int nValoracion, String synopsis){
+        this.title = title;
         this.stock = stock;
         this.price = price;
         this.synopsis = synopsis;
