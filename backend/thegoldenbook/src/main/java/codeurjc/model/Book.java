@@ -23,7 +23,7 @@ public class Book{
     private int stock;
     private int price;
     private int rateYO;
-    private int nValoracion;
+    private int Valoracion;
     private String synopsis;
     
     @OneToMany (mappedBy = "Book")
