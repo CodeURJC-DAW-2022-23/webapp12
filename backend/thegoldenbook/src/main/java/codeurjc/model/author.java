@@ -13,8 +13,8 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="authors")
-public class author {
+@Table(name="Author")
+public class Author implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,10 +27,10 @@ public class author {
 	private List<book> Book;
 
 
-	public author() {
+	public Author() {
 	}
 
-	public author(String name, String description, Blob portrait) {
+	public Author(String name, String description, Blob portrait) {
 		this.name = name;
 		this.description = description;
 		this.portrait = portrait;
