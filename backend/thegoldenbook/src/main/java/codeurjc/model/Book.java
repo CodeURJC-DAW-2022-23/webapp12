@@ -40,8 +40,16 @@ public class Book{
         this.stock = stock;
         this.price = price;
         this.synopsis = synopsis;
-    }   
+    }  
+     
+    public String getTitle() {
+        return title;
+    }
 
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
     public int getStock() {
         return stock;
     }
