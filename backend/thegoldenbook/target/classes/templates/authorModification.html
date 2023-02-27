@@ -1,0 +1,28 @@
+{{>Header}}
+<h1 class="form-title">Añadir/Modificar Autor</h1>
+<div class="container-fluid">
+    <form class="row" action="/author">
+        <div class="col-sm-12 col-md-6">
+            <label for="f-name">Nombre:</label><br>
+            <input type="text" value="{{author.name}}" id="f-name" name="f-name" required>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <label for="l-name">Apellidos:</label><br>
+            <input type="text" value="{{author.surname}}" id="l-name" name="l-name" required>
+        </div>
+        <div class="col-12">
+            <label for="info">Información:</label><br>
+            <textarea type="text" value="{{author.info}}" id="info" name="info" rows="6"></textarea>
+        </div>
+        <div class="col-12">
+            <label for="myfile">Imagen:</label>
+            <input type="file" id="myfile" name="myfile" accept=".jpg">
+        </div>
+        <div class="col-6 container-button">
+            <input type="submit" value="Cancelar" class="button" id="cancel">
+            </div>
+        <div class="col-6 container-button">
+            <input type="submit" value="Aceptar" class="button" id="accept">
+        </div>
+    </form>
+</div>
