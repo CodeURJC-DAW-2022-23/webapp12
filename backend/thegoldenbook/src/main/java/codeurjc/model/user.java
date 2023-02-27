@@ -29,7 +29,7 @@ public class user {
     private String password;
 
     @OneToMany(mappedBy = "user")
-    private List<review> reviews;
+    private List<Review> reviews;
 
 
     public user() {
