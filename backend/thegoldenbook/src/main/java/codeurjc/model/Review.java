@@ -1,48 +1,36 @@
 package codeurjc.model;
 
-import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
 @Entity 
 @Table(name = "ReviewTable")
-public class Review implements Serializable  {
+public class Review{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
-    @EmbeddedId
-    private reviewUserBook ReviewUserBook;
-
-    @Column
     private int  calification;
-
-    @Column
-    private String Text;
+    private String text;
 
     @ManyToOne
     private User User;
 
     @ManyToOne
-    private book Book;
+    private Book Book;
 
     public Review() {
     }
 
-    public Review(reviewUserBook reviewUserBook, int calification, String text) {
-        ReviewUserBook = reviewUserBook;
+    public Review(int calification, String text) {
         this.calification = calification;
-        Text = text;
-    }
-
-    public reviewUserBook getReviewUserBook() {
-        return ReviewUserBook;
-    }
-
-    public void setReviewUserBook(reviewUserBook reviewUserBook) {
-        ReviewUserBook = reviewUserBook;
+        this.text = text;
     }
 
     public int getCalification() {
@@ -54,13 +42,11 @@ public class Review implements Serializable  {
     }
 
     public String getText() {
-        return Text;
+        return text;
     }
 
     public void setText(String text) {
-        Text = text;
+        this.text = text;
     }
-
-    
     
 }
