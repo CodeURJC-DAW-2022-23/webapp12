@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TheGoldenBookApp",
+            "request": "launch",
+            "mainClass": "codeurjc.TheGoldenBookApp",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-HellowordVscodeApplication<helloword-vscode>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
