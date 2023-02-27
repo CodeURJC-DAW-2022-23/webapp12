@@ -14,6 +14,7 @@ public class Author{
 
 	private String firstName;
 	private String lastName;
+	private String info;
 
 	protected Author() {}
 
