@@ -13,7 +13,7 @@ public class Author_Controller{
     private AuthorRepository authorRepository;
 
     @Override
-    public void run(String.)
+public void run(String.)
     @GetMapping("/modifyAuthor")
     public String modifyAuthor(Model model){
         return "modifyAuthor";
