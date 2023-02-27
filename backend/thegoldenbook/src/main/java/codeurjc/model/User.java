@@ -1,41 +1,35 @@
 package codeurjc.model;
 
 import java.util.List;
-
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity (name = "UserTable")
+@Entity (name = "User")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
     private String name;
-
     private String email;
-
     private String adress;
-
     private Long phoneNumber;
-
-    @ElementCollection(fetch = FetchType.EAGER)
-    private List <String> favoriteGenre;
-
     private String password;
+    private String favoriteGenre;
 
-    @OneToMany(mappedBy = "user")
+    
+
+    @OneToMany(mappedBy = "User")
     private List<Review> reviews;
-
 
     public User() {
     }
 
-    public User(String name, String email, String adress, Long phoneNumber, List<String> favoriteGenre,
+    public User(String name, String email, String adress, Long phoneNumber, String favoriteGenre,
             String password) {
         this.name = name;
         this.email = email;
@@ -87,11 +81,11 @@ public class User {
     }
 
     
-    public List<String> getFavoriteGenre() {
+    public String getFavoriteGenre() {
         return favoriteGenre;
     }
 
-    public void setFavoriteGenre(List<String> favoriteGenre) {
+    public void setFavoriteGenre(String favoriteGenre) {
         this.favoriteGenre = favoriteGenre;
     }
     
