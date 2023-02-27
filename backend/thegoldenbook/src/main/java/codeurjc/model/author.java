@@ -1,63 +1,65 @@
 package codeurjc.model;
 
-import java.sql.Blob;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-
 
 @Entity
-@Table(name="Author")
-public class Author implements Serializable{
+public class Author{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String name;
+	private long id;
 
-	private Blob portrait;
-    private String description;
+	private String firstName;
+	private String lastName;
+    private String info;
 
-	@OneToMany(mappedBy="Author")
-	private List<book> Book;
+	protected Author() {}
 
-
-	public Author() {
+	public Author(String firstName, String lastName, String info) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.info = info;
 	}
 
-	public Author(String name, String description, Blob portrait) {
-		this.name = name;
-		this.description = description;
-		this.portrait = portrait;
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
 
-	public String getName() {
-		return name;
+	public long getId() {
+		return id;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setId(long id) {
+		this.id = id;
 	}
 
-    public Blob getPortrait(){
-        return portrait;
-    }
-
-    public void setPortrait(Blob portrait){
-        this.portrait = portrait;
-    }
-
-	public String getDescription() {
-		return description;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
 	}
 }
 
