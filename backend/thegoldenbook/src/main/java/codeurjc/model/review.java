@@ -23,7 +23,7 @@ public class Review implements Serializable  {
     private String Text;
 
     @ManyToOne
-    private user User;
+    private User User;
 
     @ManyToOne
     private book Book;
