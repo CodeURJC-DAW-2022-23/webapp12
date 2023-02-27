@@ -10,23 +10,20 @@ public class Author{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 
 	private String firstName;
 	private String lastName;
-    private String info;
 
 	protected Author() {}
 
-	public Author(String firstName, String lastName, String info) {
+	public Author(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.info = info;
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return super.toString();
 	}
 
@@ -52,14 +49,6 @@ public class Author{
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-
-	public String getInfo() {
-		return info;
-	}
-
-	public void setInfo(String info) {
-		this.info = info;
 	}
 }
 
