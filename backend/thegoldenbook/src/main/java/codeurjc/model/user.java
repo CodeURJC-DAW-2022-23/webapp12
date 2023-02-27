@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity (name = "UserTable")
-public class user {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,10 +32,10 @@ public class user {
     private List<review> reviews;
 
 
-    public user() {
+    public User() {
     }
 
-    public user(String name, String email, String adress, Long phoneNumber, List<String> favoriteGenre,
+    public User(String name, String email, String adress, Long phoneNumber, List<String> favoriteGenre,
             String password) {
         this.name = name;
         this.email = email;
