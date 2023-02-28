@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import codeurjc.model.Book;
@@ -21,12 +22,11 @@ public class BookController{
     @Autowired
     private BookRepository book_repository;
 
-    @GetMapping("/book")
-    public String book(Model model){
-      book_repository.save(new Book("Fuego y sangre", 5, 20.95, 2, "George R. R. Martin"));
-      book_repository.save(new Book("Harry Potter y el misterio del príncripe", 5, 19.80, 4, "J. K. Rowling"));
+    @RequestMapping("/book")
+    public String book(Model model, @RequestParam String email){
       model.addAttribute("bookList", book_repository.findAll());
-        return "home";
+      model.addAttribute("email", email);
+    return "home";
     }
 
     @GetMapping("/book/{id}")
