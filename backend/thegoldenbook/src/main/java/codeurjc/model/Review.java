@@ -21,11 +21,11 @@ public class Review{
     private int  valoracion;
     private String text;
 
-    @ManyToOne
-    private User user;
+    //@ManyToOne
+    //private User user;
 
-    @ManyToOne
-    private Book Book;
+    //@ManyToOne
+    //private Book Book;
 
     public Review() {
     }
