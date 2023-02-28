@@ -1,4 +1,4 @@
-package codeurjc.model;
+/*package codeurjc.model;
 
 import java.io.Serializable;
 
@@ -39,4 +39,4 @@ public class Sell {
         this.price = price;
     }
 }
-
+*/
