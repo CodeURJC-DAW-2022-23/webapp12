@@ -30,13 +30,11 @@ public class User {
     }
 
 
-    public User(String name, String email, String adress, int phoneNumber, String password, String favoriteGenre) {
+    public User(String name, String email, int phoneNumber, String password) {
         this.name = name;
         this.email = email;
-        this.adress = adress;
         this.phoneNumber = phoneNumber;
-        this.password = password;
-        this.favoriteGenre = favoriteGenre;
+        this.password = password;;
     }
 
     public String getName() {
