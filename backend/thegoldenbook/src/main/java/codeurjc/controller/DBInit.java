@@ -29,8 +29,8 @@ public class DBInit implements CommandLineRunner{
     public void run(String... args) throws Exception {
         author_repository.save(new Author("Stephen", "King"));
         author_repository.save(new Author("Laura", "Gallego"));
-        book_repository.save(new Book("Juego de tronos", 5, 20, 4, 4, "Esta es la descripción"));
-        book_repository.save(new Book("Harry Potter", 5, 20, 4, 4, "Esta es la descripción 2"));
+        //book_repository.save(new Book("Juego de tronos", 5, 20, 4, 4, "Esta es la descripción"));
+        //book_repository.save(new Book("Harry Potter", 5, 20, 4, 4, "Esta es la descripción 2"));
         user_repository.save (new User("hug", "hug@gmail.com", "plazo ", 609106587, "pas", "dras"));
         user_repository.save(new User("huga", "huga@gmail.com", "plazo mayor", 609106547, "pass","dramas"));
         review_repository.save(new Review(5,"esta bien"));
