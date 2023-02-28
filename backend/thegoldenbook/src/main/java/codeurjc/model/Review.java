@@ -30,11 +30,9 @@ public class Review{
     public Review() {
     }
 
-    public Review(int calification, String text, User user) {
+    public Review(int calification, String text) {
         this.valoracion = calification;
         this.text = text;
-        this.user = user;
-    }
 
     public int getValoracion() {
         return valoracion;
