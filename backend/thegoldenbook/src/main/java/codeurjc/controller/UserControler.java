@@ -56,25 +56,9 @@ public class UserControler {
         model.addAttribute("cart", user_repository.findAll());
             return "cart";
     }
-    @GetMapping("/bookModification")
-    public String bookModification (Model model){ 
-        model.addAttribute("bookModification", user_repository.findAll());
-            return "bookModification";
-    }
-    @GetMapping("/book")
-    public String book(Model model){ 
-        model.addAttribute("book", user_repository.findAll());
-            return "book";
-    }
-    @GetMapping("/author")
-    public String author(Model model){ 
-        model.addAttribute("author", user_repository.findAll());
-            return "author";
-    }
-    @GetMapping("/authorModification")
-    public String authorModification(Model model){ 
-        model.addAttribute("authorModification", user_repository.findAll());
-            return "authorModification";
-    }
+
+
+;
+
 }
-    // he devuelto todos los templtes de momento no difrenciamos tipo de usarios
+   

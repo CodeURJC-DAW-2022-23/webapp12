@@ -1,11 +1,11 @@
 package codeurjc.model;
 
-import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+
 
 @Entity 
 public class User {
@@ -17,7 +17,7 @@ public class User {
     private String name;
     private String email;
     private String adress;
-    private Long phoneNumber;
+    private int phoneNumber;
     private String password;
     private String favoriteGenre;
 
@@ -30,10 +30,7 @@ public class User {
     }
 
 
-
-
-
-    public User(String name, String email, String adress, Long phoneNumber, String password, String favoriteGenre) {
+    public User(String name, String email, String adress, int phoneNumber, String password, String favoriteGenre) {
         this.name = name;
         this.email = email;
         this.adress = adress;
@@ -41,13 +38,6 @@ public class User {
         this.password = password;
         this.favoriteGenre = favoriteGenre;
     }
-
-
-
-
-
-
-
 
     public String getName() {
         return name;
@@ -79,17 +69,18 @@ public class User {
     }
 
 
-    public Long getPhoneNumber() {
+
+    
+    public int getPhoneNumber() {
         return phoneNumber;
     }
 
 
-
-    public void setPhoneNumber(Long phoneNumber) {
+    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    
+
     public String getFavoriteGenre() {
         return favoriteGenre;
     }
