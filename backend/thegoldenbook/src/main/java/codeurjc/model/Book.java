@@ -20,7 +20,7 @@ public class Book{
 
     private String title;
     private int stock;
-    private int price;
+    private double price;
     private int nValoracion;
     private String author;
     
@@ -33,7 +33,7 @@ public class Book{
     public Book() {}
     
 
-    public Book(String title, int stock, int price, int nValoracion, String author){
+    public Book(String title, int stock, double price, int nValoracion, String author){
         this.title = title;
         this.stock = stock;
         this.price = price;
@@ -56,11 +56,11 @@ public class Book{
         this.stock = stock;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

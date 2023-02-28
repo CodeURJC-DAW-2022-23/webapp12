@@ -1,7 +1,11 @@
 package codeurjc.controller;
 
+import java.net.MalformedURLException;
+import java.net.http.HttpHeaders;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.JpaSort.Path;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +23,8 @@ public class BookController{
 
     @GetMapping("/book")
     public String book(Model model){
-      book_repository.save(new Book("Juego de tronos", 5, 20, 2, "Author1"));
-      book_repository.save(new Book("Harry Potter", 5, 15, 4, "Author2"));
+      book_repository.save(new Book("Fuego y sangre", 5, 20.95, 2, "George R. R. Martin"));
+      book_repository.save(new Book("Harry Potter y el misterio del príncripe", 5, 19.80, 4, "J. K. Rowling"));
       model.addAttribute("bookList", book_repository.findAll());
         return "home";
     }
@@ -33,4 +37,18 @@ public class BookController{
         }
         return "bookInfo";
     }
-}
+
+    /*@GetMapping("/static/image") 
+    public String viewImage(Model model) { 
+      model.addAttribute("imageName", imageName); 
+      return "view_image"; 
+    } 
+    
+    @GetMapping("/download_image") 
+    public ResponseEntity<Object> downloadImage(Model model) throws MalformedURLException {
+       Path imagePath = IMAGES_FOLDER.resolve("image.jpg"); 
+       Resource image = new UrlResource(imagePath.toUri()); 
+       return ResponseEntity.ok() 
+       .header(HttpHeaders.CONTENT_TYPE, "image/jpeg") 
+       .body(image); }
+    }*/
