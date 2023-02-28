@@ -30,11 +30,13 @@ public class User {
     }
 
 
-    public User(String name, String email, int phoneNumber, String password) {
+    public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.password = password;;
+        this.adress = "";
+        this.phoneNumber = 0;
+        this.password = password;
+        this.favoriteGenre = "";
     }
 
     public String getName() {
@@ -61,12 +63,9 @@ public class User {
     }
 
 
-
     public void setAdress(String adress) {
         this.adress = adress;
     }
-
-
 
     
     public int getPhoneNumber() {
