@@ -37,18 +37,4 @@ public class BookController{
         }
         return "bookInfo";
     }
-
-    /*@GetMapping("/static/image") 
-    public String viewImage(Model model) { 
-      model.addAttribute("imageName", imageName); 
-      return "view_image"; 
-    } 
-    
-    @GetMapping("/download_image") 
-    public ResponseEntity<Object> downloadImage(Model model) throws MalformedURLException {
-       Path imagePath = IMAGES_FOLDER.resolve("image.jpg"); 
-       Resource image = new UrlResource(imagePath.toUri()); 
-       return ResponseEntity.ok() 
-       .header(HttpHeaders.CONTENT_TYPE, "image/jpeg") 
-       .body(image); }
-    }*/
+  }
