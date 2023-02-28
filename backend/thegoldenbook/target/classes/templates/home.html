@@ -3,8 +3,8 @@
     <h1>NOVEDADES</h1>
     <br>
     <hr/>
-    <div class="flex-container-novedades">
-            <ul class="item">
+    <div class="recomendationSet">
+            <ul class="items">
                 {{#bookList}}
                 <li>
                     {{>book}}
@@ -15,8 +15,8 @@
     <h1>MÁS LEÍDOS</h1>
     <br>
     <hr/>
-    <div class="flex-container-novedades">
-        <ul class="read-items">
+    <div class="recomendationSet">
+        <ul class="items">
             {{#books}}
             <li>
             {{>book}}
@@ -30,7 +30,7 @@
     <br>
     <hr/>
     <div class="flex-container-novedades">
-        <ul class="recommended-items">
+        <ul class="items">
             {{#books}}
             <li><a href="/books/{{id}}">{{title}}</a></li>
             {{/books}}
