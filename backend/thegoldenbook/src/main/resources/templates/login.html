@@ -1,26 +1,19 @@
 {{>Header}}
 
-    <form class="formulario" action="/login" method="post">
+<form class="form">
 
-        <h1>Iniciar Sesión</h1>
-        <div class="contenedor">
-
-            <div class="input-contenedor">
-                <i class="fa-solid fa-envelope icon"></i>
-                <input type="text"placeholder="Correo Electrónico">
-
-            </div>
-
-            <div class="input-contenedor">
-                <i class="fa-solid fa-lock icon"></i>
-                <input type="password"  placeholder="Contraseña">
-
-            </div>
-            <input type="submit" value="Iniciar Sesión" class="button">
-            <p>Al iniciar sesión, aceptas nuestras Condiciones de uso y Política de privacidad</p>
-            <p>¿No tienes cuenta? <a class ="link" href="register.html"> Registrate</a></p>
+    <h1>Iniciar Sesión</h1>
+    <div class="containerLoginRegister">
+        <div class="input-container">
+            <i class="fa-solid fa-envelope icon"></i>
+            <input type="text" placeholder="Correo Electrónico">
         </div>
-
-    </form>
-
-{{>Footer}}
+        <div class="input-container">
+            <i class="fa-solid fa-lock icon"></i>
+            <input type="password" placeholder="Contraseña">
+        </div>
+        <input type="submit" value="Iniciar Sesión" class="button" id="loginRegister">
+        <p>Al iniciar sesión, aceptas nuestras Condiciones de uso y Política de privacidad</p>
+        <p>¿No tienes cuenta? <a class ="link" href="register.html"> Registrate</a></p>
+    </div>
+</form>

@@ -7,15 +7,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import codeurjc.repository.UserRepository;
 
-
-
-
 @Controller
 public class UserControler {
 
     @Autowired
     private UserRepository user_repository;
 
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+    /*
     @GetMapping("/profile")
     public String profile (Model model){ 
         model.addAttribute("profile", user_repository.findAll());
@@ -49,7 +52,7 @@ public class UserControler {
             return "cart";
     }
 
-
+*/
 ;
 
 }
