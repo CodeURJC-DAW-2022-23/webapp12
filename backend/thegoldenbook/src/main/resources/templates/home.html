@@ -4,10 +4,12 @@
     <br>
     <hr/>
     <div class="flex-container-novedades">
-            <ul class="new-items">
-                {{#books}}
-                <li><a href="/books/{{id}}">{{title}}</a></li>
-                {{/books}}
+            <ul class="item">
+                {{#book}}
+                <li>
+                    {{>book}}
+                </li>
+                {{/book}}
         </ul>
     </div>
     <h1>MÁS LEÍDOS</h1>
@@ -16,12 +18,14 @@
     <div class="flex-container-novedades">
         <ul class="read-items">
             {{#books}}
-            <li><a href="/books/{{id}}">{{title}}</a></li>
+            <li>
+            {{>book}}
+            <a href="/books/{{id}}">Más Detalles</a></li>
             {{/books}}
         </ul>
     <br>
     <hr/>
-    {{#lloged}}
+    {{#logged}}
     <h1>RECOMENDADOS PARA TI</h1>
     <br>
     <hr/>

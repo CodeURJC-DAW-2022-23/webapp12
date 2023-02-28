@@ -1,5 +1,3 @@
-{{>header}}
-
     <div>
         {{#book.image}}
         <img src="/books/{{book.id}}/image">
@@ -11,15 +9,13 @@
         <br>
         <br>
         <div class="information">
-            <p>{{book.title}}</p>
-            <p>{{book.author}}</p>
-            <p>{{book.nValoracion}}</p>
-            <p>{{book.price}}</p>
+            <a href="/books/{{id}}">{{title}}</a>
+            <p>{{author}}</p>
+            <p>{{nValoracion}}</p>
+            <p>{{price}}</p>
             {{#logged}}
             <input type="submit" value="Añadir" class="button" id="add">
             {{/logged}}
         </div>
     </div>
     <hr/>
-
-{{>footer}}

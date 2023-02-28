@@ -21,9 +21,8 @@ public class Book{
     private String title;
     private int stock;
     private int price;
-    private int rateYO;
-    private int Valoracion;
-    private String synopsis;
+    private int nValoracion;
+    private String author;
     
     /*@OneToMany (mappedBy = "Book")
     private List<Review> Reviews;
@@ -34,11 +33,11 @@ public class Book{
     public Book() {}
     
 
-    public Book(String title, int stock, int price, int rateYO, int nValoracion, String synopsis){
+    public Book(String title, int stock, int price, int nValoracion, String author){
         this.title = title;
         this.stock = stock;
         this.price = price;
-        this.synopsis = synopsis;
+        this.author = author;
     }  
 
     public String getTitle() {
@@ -65,11 +64,11 @@ public class Book{
         this.price = price;
     }
 
-    public String getSynopsis() {
-        return synopsis;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setSynopsis(String synopsis) {
-        this.synopsis = synopsis;
+    public void setAuthor(String author) {
+        this.author = author;
     }  
 }
