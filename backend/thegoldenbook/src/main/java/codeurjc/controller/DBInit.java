@@ -31,8 +31,8 @@ public class DBInit implements CommandLineRunner{
         author_repository.save(new Author("Laura", "Gallego"));
         book_repository.save(new Book("Juego de tronos", 5, 20, 4, 4, "Esta es la descripción"));
         book_repository.save(new Book("Harry Potter", 5, 20, 4, 4, "Esta es la descripción 2"));
-        user_repository.save (new User("huga", "huga@gmail.com", "plazo mayor", 609106547, "pass", "dramas"));
-        user_repository.save (new User("hugo", "hugo@gmail.com", "plaza mayor", 609102547, "prob", "drama"));
+        user_repository.save (new User("hug", "hug@gmail.com", "plazo ", 609106587, "pas", "dras"));
+        user_repository.save(new User("huga", "huga@gmail.com", "plazo mayor", 609106547, "pass","dramas"));
         review_repository.save(new Review(5,"esta bien"));
         review_repository.save(new Review(8,"esta mal"));
     }
