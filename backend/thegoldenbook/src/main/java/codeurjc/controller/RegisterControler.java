@@ -1,5 +1,4 @@
-package codeurjc.controller;
-
+/*package codeurjc.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -16,3 +15,4 @@ public class RegisterControler {
         user_repository.save(new User("Chloe", "O'Brian"));
     }
 }
+*/

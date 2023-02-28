@@ -19,8 +19,8 @@ public class BookController{
 
     @GetMapping("/book")
     public String book(Model model){
-      book_repository.save(new Book("Juego de tronos", 5, 20, 4, "Author1"));
-      book_repository.save(new Book("Harry Potter", 5, 20, 4, "Author2"));
+      book_repository.save(new Book("Juego de tronos", 5, 20, 2, "Author1"));
+      book_repository.save(new Book("Harry Potter", 5, 15, 4, "Author2"));
       model.addAttribute("bookList", book_repository.findAll());
         return "home";
     }
