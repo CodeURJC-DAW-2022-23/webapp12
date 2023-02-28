@@ -1,10 +1,13 @@
 package codeurjc.controller;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import codeurjc.model.User;
 import codeurjc.repository.UserRepository;
 
 @Controller
@@ -13,7 +16,7 @@ public class UserControler {
     @Autowired
     private UserRepository user_repository;
 
-    @GetMapping("/login")
+    @RequestMapping("/login")
     public String login(){
         return "login";
     }

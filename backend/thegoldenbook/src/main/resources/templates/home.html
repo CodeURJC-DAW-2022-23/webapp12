@@ -3,8 +3,8 @@
     <h1>NOVEDADES</h1>
     <br>
     <hr/>
-    <div class="flex-container-novedades">
-            <ul class="item">
+    <div class="recomendationSet flex-container">
+            <ul class="recomendationSet">
                 {{#bookList}}
                 <li>
                     {{>book}}
@@ -15,28 +15,31 @@
     <h1>MÁS LEÍDOS</h1>
     <br>
     <hr/>
-    <div class="flex-container-novedades">
-        <ul class="read-items">
-            {{#books}}
+    <div class="recomendationSet flex-container">
+        <ul class="recomendationSet">
+            {{#booksList}}
             <li>
-            {{>book}}
-            <a href="/books/{{id}}">Más Detalles</a></li>
-            {{/books}}
+                {{>book}}
+            </li>
+            {{/booksList}}
         </ul>
+    </div>
     <br>
     <hr/>
     {{#logged}}
     <h1>RECOMENDADOS PARA TI</h1>
     <br>
     <hr/>
-    <div class="flex-container-novedades">
-        <ul class="recommended-items">
-            {{#books}}
-            <li><a href="/books/{{id}}">{{title}}</a></li>
-            {{/books}}
+    <div class="recomendationSet">
+        <ul class="recomendationSet">
+            {{#booksList}}
+            <li>
+                {{>book}}   
+            </li>
+            {{/booksList}}
     </ul>
     {{/logged}}
-    <img src="images/fondo-inicio.jpg" class="fondo-final" alt="">
+    <img src="images/fondo-inicio.jpg" class="homeBottomImage" alt="">
 
 {{>footer}}
 

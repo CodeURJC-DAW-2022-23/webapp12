@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import codeurjc.model.Book;
@@ -17,12 +18,11 @@ public class BookController{
     @Autowired
     private BookRepository book_repository;
 
-    @GetMapping("/book")
-    public String book(Model model){
-      book_repository.save(new Book("Juego de tronos", 5, 20, 4, "Author1"));
-      book_repository.save(new Book("Harry Potter", 5, 20, 4, "Author2"));
+    @RequestMapping("/book")
+    public String book(Model model, @RequestParam String email){
       model.addAttribute("bookList", book_repository.findAll());
-        return "home";
+      model.addAttribute("email", email);
+    return "home";
     }
 
     @GetMapping("/book/{id}")
