@@ -22,9 +22,11 @@
         </div>
         <div id="buy" class="col-2">
                 <p>{{book.price}}</p>
+                {{#logged}}
                 <button class="button" id="cart" type="button">Añadir a Cesta</button>
                 <button class="button" id="favorite" type="button">Favoritos</button>
-                <button class="button" id="addReview" type="button">Añadir Reseña</button>     
+                <button class="button" id="addReview" type="button">Añadir Reseña</button>   
+                {{/logged}}  
         </div>
     </div>
     <div id="info">
