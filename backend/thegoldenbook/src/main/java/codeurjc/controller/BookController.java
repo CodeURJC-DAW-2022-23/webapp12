@@ -22,10 +22,9 @@ public class BookController{
     @Autowired
     private BookRepository book_repository;
 
-    @RequestMapping("/book")
-    public String book(Model model, @RequestParam String email){
+    @GetMapping("/book")
+    public String book(Model model){
       model.addAttribute("bookList", book_repository.findAll());
-      model.addAttribute("email", email);
     return "home";
     }
 
