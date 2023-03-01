@@ -33,6 +33,7 @@ public class Book{
         this.title = title;
         this.stock = stock;
         this.price = price;
+        this.avgCalification = 0;
     }
 
     public Long getId() {
