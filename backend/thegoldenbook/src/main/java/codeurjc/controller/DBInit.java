@@ -3,6 +3,7 @@ package codeurjc.controller;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +18,7 @@ import codeurjc.repository.ReviewRepository;
 
 
 @RestController
-@RequestMapping("POST")
+@RequestMapping("/init")
 public class DBInit{
     @Autowired
     private AuthorRepository author_repository;
@@ -34,9 +35,10 @@ public class DBInit{
         author_repository.save(new Author("Laura", "Gallego"));
         book_repository.save(new Book("HarryPotter", 3, 10));
         book_repository.save(new Book("HarryPotter", 3, 10));
-        user_repository.save (new User("hug", "hug@gmail.com", "pas"));
-        user_repository.save(new User("huga", "huga@gmail.com", "pass"));
+        //user_repository.save (new User("hug", "hug@gmail.com", "pas"));
+        //user_repository.save(new User("huga", "huga@gmail.com", "pass"));
         review_repository.save(new Review(5,"esta bien"));
         review_repository.save(new Review(8,"esta mal"));
     }
+    
 }
