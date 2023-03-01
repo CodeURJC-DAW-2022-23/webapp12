@@ -17,7 +17,7 @@ import codeurjc.repository.ReviewRepository;
 
 
 @RestController
-@RequestMapping
+@RequestMapping("POST")
 public class DBInit{
     @Autowired
     private AuthorRepository author_repository;
