@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 @Entity 
 public class User {
@@ -25,7 +24,7 @@ public class User {
 
     @OneToMany
     private List<Review> reviewList;
-    
+
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roles;
 

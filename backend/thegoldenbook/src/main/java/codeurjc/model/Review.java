@@ -5,38 +5,37 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
-
 @Entity 
 public class Review{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
-    private int  Valoracion;
+    private int calification;
     private String text;
 
-    //@ManyToOne
-    //private User user;
-
-    //@ManyToOne
-    //private Book Book;
-
-    public Review() {
-    }
+    public Review() {}
 
     public Review(int calification, String text) {
-        this.Valoracion = calification;
+        this.calification = calification;
         this.text = text;
     }
 
-    public int getValoracion() {
-        return Valoracion;
+    public Long getId() {
+        return id;
     }
 
-    public void setValoracion(int valoracion) {
-        Valoracion = valoracion;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public int getCalification() {
+        return calification;
+    }
+
+    public void setCalification(int calification) {
+        this.calification = calification;
     }
 
     public String getText() {
@@ -45,7 +44,7 @@ public class Review{
 
     public void setText(String text) {
         this.text = text;
-    } 
+    }
 }
 
 
