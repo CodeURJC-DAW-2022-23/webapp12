@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+
 
 import codeurjc.model.User;
 import codeurjc.repository.UserRepository;
@@ -16,9 +19,20 @@ public class UserControler {
     @Autowired
     private UserRepository user_repository;
 
-    @RequestMapping("/login")
+    @GetMapping("/login")
     public String login(){
         return "login";
+    }
+
+    @GetMapping("/register")
+    public String register (){ 
+            return "register";
+    }
+
+    @RequestMapping("/register")
+    public String añadirUser(@RequestParam String name, @RequestParam String email, @RequestParam String password){
+        user_repository.save(new User(name, email, password));
+        return "redirect:/login";
     }
 
     /*
@@ -32,11 +46,7 @@ public class UserControler {
         model.addAttribute("profileModification", user_repository.findAll());
             return "register";
     }
-    @GetMapping("/register")
-    public String register (Model model){ 
-        model.addAttribute("register", user_repository.findAll());
-            return "register";
-    }
+    
 
 
     @GetMapping("/Header")
