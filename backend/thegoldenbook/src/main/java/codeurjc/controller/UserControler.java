@@ -28,13 +28,12 @@ public class UserControler {
     public String register (){ 
             return "register";
     }
-
+/*
     @RequestMapping("/register")
     public String añadirUser(@RequestParam String name, @RequestParam String email, @RequestParam String password){
-        user_repository.save(new User(name, email, password));
         return "redirect:/login";
     }
-
+*/
     /*
     @GetMapping("/profile")
     public String profile (Model model){ 
