@@ -26,40 +26,34 @@
                 <div class="container-fluid">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="author.html">Inicio</a>
+                            <a class="nav-link" href="/author">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Buscar</a>
                         </li>
-                        {{^logged}}
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Iniciar Sesion</a>
+                            <a class="nav-link" href="/login">Iniciar Sesion</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="register.html">Registrarse</a>
-                        </li>
-                        {{/logged}}
-                        {{#logged}}
-                        <li class="nav-item">
-                            <a class="nav-link" href="cart.html">Cesta</a>
+                            <a class="nav-link" href="/register">Registrarse</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="profile.html">Perfil</a>
+                            <a class="nav-link" href="/cart">Cesta</a>
                         </li>
-                        {{#admin}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile">Perfil</a>
+                        </li>
                         <li class="admin">
-                        <a href="bookModification.html">
+                        <a href="/book/modify">
                             <button class="botonAdmin">Añadir Libro</button>
                         </a>
                         </li>
                         <li class="admin">
-                            <a href="authorModification.html">
+                            <a href="/author/modify">
                             <button class="botonAdmin">Añadir Autor</button>
                             </a>
                         
-                        </li>  
-                        {{/admin}}                   
-                        {{/logged}}
+                        </li>                    
                     </ul>
                 </div>
             </nav>

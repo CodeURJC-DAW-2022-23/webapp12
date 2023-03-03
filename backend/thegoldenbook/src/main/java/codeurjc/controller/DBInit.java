@@ -1,4 +1,4 @@
-package codeurjc.controller;
+/*package codeurjc.controller;
 
 import javax.annotation.PostConstruct;
 
@@ -41,3 +41,4 @@ public class DBInit{
         user_repository.save(new User("Harry", "email", "password"));
     }
 }
+*/
