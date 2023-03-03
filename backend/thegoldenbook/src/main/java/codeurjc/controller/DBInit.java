@@ -28,8 +28,8 @@ public class DBInit{
 
     @PostMapping
     public void init() throws Exception {
-        author_repository.save(new Author("Stephen", "King"));
-        author_repository.save(new Author("Laura", "Gallego"));
+        author_repository.save(new Author("Stephen", "King", "Yei"));
+        author_repository.save(new Author("Laura", "Gallego", "yeye"));
         book_repository.save(new Book("Juego de tronos", 5, 20, 4, "Author1"));
         book_repository.save(new Book("Harry Potter", 5, 20, 4, "Author2"));
         user_repository.save (new User("hug", "hug@gmail.com", "pas"));
