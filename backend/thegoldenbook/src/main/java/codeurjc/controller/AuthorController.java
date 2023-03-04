@@ -1,5 +1,6 @@
 package codeurjc.controller;
 
+import java.io.IOException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import codeurjc.model.Author;
 import codeurjc.repository.AuthorRepository;
+
 
 @Controller
 public class AuthorController{
@@ -38,13 +40,21 @@ public class AuthorController{
     }
 
     @GetMapping("/authorModification")
-    public String authorModification(){
-        return "/authorModification";
+    public String authorModification(Model model){
+        return "authorModification";
     }
 
-    @RequestMapping("/authorModification")
-    public String addAuthor(@RequestParam String fname, @RequestParam String lname, @RequestParam String info){ //hay que añadir la imagen
-        author_repository.save(new Author(fname, lname, info));
-        return "redirect:/author";
+
+    @PostMapping("/authorModification")
+    public String newAuthorModification(Model model, Author author) throws IOException{
+
+        
+
+
+        author_repository.save(author);
+
+        return "redirect:/author/";
+
     }
+
 }
