@@ -1,0 +1,31 @@
+{{>header}} 
+    <div class="container-fluid">
+        <form action="/newbook" method="post" enctype="multipart/form-data">
+        <h1>Añadir Libro</h1>
+        <div class="row">
+            <div class="col-12">
+                <input type="text" name="title" placeholder="Titulo">
+            </div>
+            <div class="col-12">
+                <input type="text" name="author" placeholder="Autor">
+            </div>
+            <div class="col-12">
+                <input type="text" name="price" placeholder="Precio">
+            </div>
+            <div class="col-12">
+                <input type="text-area" name="info" placeholder="Sinopis">
+            </div>
+            <div class="col-12">
+                <input type="text" name="stock" placeholder="Cantidad">
+            </div>
+            <div class="col-12">
+                <label for="myfile">Imagen:</label>
+                <input type="file" id="myfile" name="imageField" accept=".jpg .jepg">
+            </div>
+            <div>
+                <input type="submit" value="Guardar">
+            </div>
+        </div>
+     </form>
+    </div>
+{{>Footer}}

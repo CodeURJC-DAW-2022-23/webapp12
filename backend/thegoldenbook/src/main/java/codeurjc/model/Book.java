@@ -11,6 +11,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 @Entity
@@ -21,55 +23,41 @@ public class Book{
     private long id;
 
     private String title;
-    private int stock;
-    private double price;
-    private int nValoracion;
-    private String genre;
     private String author;
-    private boolean image; 
-    private int amount;
+    private int price;
+    private String info;
+    private int stock;
+    private int reviewAVG;
 
-    
-    /*@OneToMany (mappedBy = "Book")
-    private List<Review> Reviews;
-
-    @OneToOne (mappedBy = "Book")
-    private Author author;*/
+    @Lob
+    @JsonIgnore
+    private Blob imageFile;
+    private boolean image;
 
     public Book() {}
     
-
-    public Book(String title, int stock, double price, int nValoracion, String genre, String author, boolean image, int amount){
+    public Book(String title, String author, int price, String info, int stock, int reviewAVG){
         this.title = title;
-        this.stock = stock;
-        this.price = price;
         this.author = author;
-        this.image = image;
-        this.amount = amount;
-    }  
+        this.price = price;
+        this.info = info;
+        this.stock = stock;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
     }
 
-
     public void setTitle(String title) {
         this.title = title;
-    }
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public String getAuthor() {
@@ -78,27 +66,45 @@ public class Book{
 
     public void setAuthor(String author) {
         this.author = author;
-    }  
+    }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public Blob getImageFile() {
+        return imageFile;
+    }
+
+    public void setImageFile(Blob imageFile) {
+        this.imageFile = imageFile;
+    }
+    
     public boolean getImage(){
         return image;
     }
 
-    //public boolean setImage(boolean image){
-    
-    public String getGenre(){
-    return genre; 
-    }
-
-    public void setGenre(String genre){
-        this.genre = genre;
-    }
-
-    public int getAmount(){
-        return amount;
-    }
-
-    public void setAmount(int amount){
-        this.amount = amount;
+    public void setImage(boolean image){
+        this.image = image;
     }
 }
