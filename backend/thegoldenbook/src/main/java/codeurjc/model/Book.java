@@ -24,10 +24,13 @@ public class Book{
 
     private String title;
     private String author;
-    private int price;
+    private double price;
     private String info;
     private int stock;
-    private int reviewAVG;
+    private String valoracion;
+    //private int reviewAVG;
+
+    
 
     @Lob
     @JsonIgnore
@@ -36,10 +39,11 @@ public class Book{
 
     public Book() {}
     
-    public Book(String title, String author, int price, String info, int stock, int reviewAVG){
+    public Book(String title, String author, double price, String valoracion, String info, int stock){
         this.title = title;
         this.author = author;
         this.price = price;
+        this.valoracion = valoracion;
         this.info = info;
         this.stock = stock;
     }
@@ -68,7 +72,7 @@ public class Book{
         this.author = author;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -106,5 +110,12 @@ public class Book{
 
     public void setImage(boolean image){
         this.image = image;
+    }
+    public String getValoracion() {
+        return valoracion;
+    }
+
+    public void setValoracion(String valoracion) {
+        this.valoracion = valoracion;
     }
 }
