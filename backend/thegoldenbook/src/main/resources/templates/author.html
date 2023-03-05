@@ -6,7 +6,7 @@
 
         {{#author.image}}
         <div class="col-sm-12 col-md-6 author-img">
-            <img src="/{{author.id}}/img">
+            <img src="/images/{{author.id}}">
         </div>            
         {{/author.image}}
 
@@ -14,12 +14,12 @@
         <img src="/images/no_image.png">
         {{/author.image}} 
 
-        <div class="col-sm-12 col-md-6 biography">
+        <div class="col-sm-12 col-md-6 information">
             <p>{{author.info}}</p>
         </div>
         
         {{#author.books}}
-        <div class="col-sm-12 col-md-6">
+        <div class="recomendationSet flex-container">
             {{#image}}
             <img src="/images/{{id}}.jpg">
             {{/image}}
@@ -38,4 +38,4 @@
     </div>
 </div>
 
-{{>Footer}}
+{{>Footer}}*/
