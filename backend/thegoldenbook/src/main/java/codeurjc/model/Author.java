@@ -1,9 +1,12 @@
 package codeurjc.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Author{
@@ -15,6 +18,9 @@ public class Author{
 	private String firstName;
 	private String lastName;
 	private String info;
+    
+	@OneToMany(mappedBy = "author")
+    private List<Book> books;
 
 	protected Author() {}
 
@@ -61,5 +67,14 @@ public class Author{
 	public void setInfo(String info) {
 		this.info = info;
 	}
+
+	public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+	
 }
 

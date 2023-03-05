@@ -1,11 +1,41 @@
 {{>header}}
+<hr/>
 <div class="author container-fluid">
-    <h2>{{author.firstName}} {{author.lastName}}</h2>
-    {{#book.image}}
-    <img src="/authorList/[[author.id]]/img">
-    {{/book.image}}
+    <div class="row">
+        <h2 class="name">{{author.firstName}} {{author.lastName}}</h2>
 
-    {{^book.image}}
-    <p>NO IMAGE AVAILABLE</p>
-    {{/book.image}}
+        {{#author.image}}
+        <div class="col-sm-12 col-md-6 author-img">
+            <img src="/{{author.id}}/img">
+        </div>            
+        {{/author.image}}
+
+        {{^author.image}}
+        <img src="/images/no_image.png">
+        {{/author.image}} 
+
+        <div class="col-sm-12 col-md-6 biography">
+            <p>{{author.info}}</p>
+        </div>
+        
+        {{#author.books}}
+        <div class="col-sm-12 col-md-6">
+            {{#image}}
+            <img src="/images/{{id}}.jpg">
+            {{/image}}
+            {{^image}}
+            <img src="/images/no_image.png">
+            {{/image}} 
+            <br><br>
+            <div class="information">
+                <a href="/book/{{id}}">{{title}}</a>
+                <p>{{author.firstName}} {{author.lastName}}</p>
+                <p>{{stock}}</p>
+                <p>{{price}}</p>
+            </div>
+        </div>
+        {{/author.books}}
+    </div>
 </div>
+
+{{>Footer}}
