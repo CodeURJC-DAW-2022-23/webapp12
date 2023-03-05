@@ -33,7 +33,7 @@ public class BookController{
     @Autowired
     private BookRepository book_repository;
 
-    @GetMapping("/book")
+    @GetMapping("/home")
     public String book(Model model){
       model.addAttribute("bookList", book_repository.findAll());
     return "home";
