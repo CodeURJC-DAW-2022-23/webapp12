@@ -1,21 +1,21 @@
 {{>header}}
 
 <h1>Registrate</h1>
-<form class="contenedor" action="/login" method="post">
+<form class="contenedor" action="/register" method="post" enctype="multipart/form-data">
     <div class="input-contenedor">
-        <i class="fa-solid fa-user icon"></i>
+       
         <input type="text" placeholder="Nombre" name="name">
     </div>
     <div class="input-contenedor">
-        <i class="fa-solid fa-user icon"></i>
+
         <input type="text" placeholder="Apellidos" name="lastName">
     </div>
     <div class="input-contenedor">
-        <i class="fa-solid fa-envelope icon"></i>
+
         <input type="text" placeholder="Correo Electrónico" name="email">
     </div>
     <div class="input-contenedor">
-        <i class="fa-solid fa-lock icon"></i>
+
         <input type="password" placeholder="Contraseña" name="password">
     </div>
     <input type="submit" value="Registrate" class="button">
