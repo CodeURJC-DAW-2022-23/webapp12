@@ -48,9 +48,6 @@ public class AuthorController{
     @PostMapping("/authorModification")
     public String newAuthorModification(Model model, Author author) throws IOException{
 
-        
-
-
         author_repository.save(author);
 
         return "redirect:/home";

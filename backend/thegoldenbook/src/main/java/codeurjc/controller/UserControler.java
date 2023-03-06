@@ -26,6 +26,19 @@ public class UserControler {
     public String login(){
         return "login";
     }
+    @PostMapping("/login")
+    public String newLogin(Model model, User user) throws IOException{
+
+        user_repository.save(user);
+
+        return "redirect:/login";
+
+    }
+
+    @RequestMapping("/login")
+    public String newLogin(@RequestParam String email, @RequestParam String password){
+        return "login";
+    }
 
     @GetMapping("/register")
     public String register (Model model){ 
@@ -43,8 +56,8 @@ public class UserControler {
     }
 
     @RequestMapping("/register")
-    public String añadirUser(@RequestParam String name, @RequestParam String email, @RequestParam String password){
-        return "redirect:/login";
+    public String newUser(@RequestParam String name, @RequestParam String email, @RequestParam String password){
+        return "register";
     }
 
     /*
