@@ -53,7 +53,7 @@ public class AuthorController{
 
         author_repository.save(author);
 
-        return "redirect:/author/";
+        return "redirect:/home/";
 
     }
 
