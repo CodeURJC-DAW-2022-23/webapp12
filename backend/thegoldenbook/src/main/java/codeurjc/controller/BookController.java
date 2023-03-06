@@ -48,12 +48,12 @@ public class BookController{
         return "bookInfo";
     }
 
-    @GetMapping("/newbook")
+    @GetMapping("/newBook")
     public String newBook(Model model){
       return "newBook";
     }
 
-    @PostMapping("/newbook")
+    @PostMapping("/newBook")
 	  public String newBookProcess(Model model, Book book, MultipartFile imageField) throws IOException {
 
 		  if (!imageField.isEmpty()) {
