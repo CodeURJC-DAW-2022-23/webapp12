@@ -5,17 +5,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import codeurjc.repository.SellRepository;
+import codeurjc.repository.CartRepository;
 
 @Controller
 public class CartController {
 
     @Autowired  
-    private SellRepository sell_repository;
+    private CartRepository cart_repository;
     
     @GetMapping("/cart")
     public String book(Model model){
-        model.addAttribute("bookList", sell_repository.findAll());
+        model.addAttribute("bookList", cart_repository.findAll());
     return "cart";
     }
+
 }
