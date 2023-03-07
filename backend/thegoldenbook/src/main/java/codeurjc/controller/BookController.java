@@ -33,7 +33,7 @@ public class BookController{
     @Autowired
     private BookRepository book_repository;
 
-    @GetMapping("/home")
+    @GetMapping("/book")
     public String book(Model model){
       model.addAttribute("bookList", book_repository.findAll());
     return "home";
@@ -48,31 +48,39 @@ public class BookController{
         return "bookInfo";
     }
 
-    @GetMapping("/newBook")
+    @GetMapping("/newbook")
     public String newBook(Model model){
       return "newBook";
     }
 
-    @PostMapping("/newBook")
-	  public String newBookProcess(Model model, Book book, MultipartFile imageField) throws IOException {
-
-		  if (!imageField.isEmpty()) {
-			  book.setImageFile(BlobProxy.generateProxy(imageField.getInputStream(), imageField.getSize()));
-			  book.setImage(true);
-		  }
-
-		  book_repository.save(book);
-
-		  return "redirect:/book/";
+    @PostMapping("/newbook")
+    public String newBookProcess(Model model, Book book, MultipartFile imageField) throws IOException {
+  
+      if (!imageField.isEmpty()) {
+        book.setImageFile(BlobProxy.generateProxy(imageField.getInputStream(), imageField.getSize()));
+        book.setImage(true);
+      }
+  
+      book_repository.save(book);
+  
+      model.addAttribute("id", book.getId());
+  
+      return "redirect:/book";
     }
+    
+    @GetMapping("/{id}/image")
+	  public ResponseEntity<Object> downloadImage(@PathVariable long id) throws SQLException, IOException {
 
-    /*@PostMapping("/book/{id}/image")
-	  public ResponseEntity<Object> uploadImage(@PathVariable long id, @RequestParam MultipartFile imageFile ) throws SQLException {
-      Book book = book_repository.findById(id).orElseThrow();
-      URI location = fromCurrentRequest().build().toUri();
-      book.setImage(true);
-      book.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
-      book_repository.save
-			return ResponseEntity.notFound().build();
-	}*/
-  }
+		  Optional<Book> book = book_repository.findById(id);
+		  if (book.isPresent() && book.get().getImageFile() != null) {
+
+			  InputStreamResource file = new InputStreamResource(book.get().getImageFile().getBinaryStream());
+
+			  return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, "image/jpeg", "image/jpg")
+					.contentLength(book.get().getImageFile().length()).body(file);
+
+		  } else {
+			  return ResponseEntity.notFound().build();
+		  }
+	}
+	}
