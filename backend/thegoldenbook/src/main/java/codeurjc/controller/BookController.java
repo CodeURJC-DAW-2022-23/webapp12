@@ -33,7 +33,7 @@ public class BookController{
     @Autowired
     private BookRepository book_repository;
 
-    @GetMapping("/book")
+    @GetMapping("/home")
     public String book(Model model){
       model.addAttribute("bookList", book_repository.findAll());
     return "home";
@@ -48,12 +48,12 @@ public class BookController{
         return "bookInfo";
     }
 
-    @GetMapping("/newbook")
+    @GetMapping("/newBook")
     public String newBook(Model model){
       return "newBook";
     }
 
-    @PostMapping("/newbook")
+    @PostMapping("/newBook")
     public String newBookProcess(Model model, Book book, MultipartFile imageField) throws IOException {
   
       if (!imageField.isEmpty()) {
@@ -65,7 +65,7 @@ public class BookController{
   
       model.addAttribute("id", book.getId());
   
-      return "redirect:/book";
+      return "redirect:/home";
     }
     
     @GetMapping("/{id}/image")
