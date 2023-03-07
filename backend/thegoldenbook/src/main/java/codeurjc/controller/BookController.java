@@ -3,7 +3,7 @@ package codeurjc.controller;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.http.HttpHeaders;
+import org.springframework.http.HttpHeaders;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
