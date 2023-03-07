@@ -25,8 +25,14 @@ public class ReviewController {
             return "review";
         
     }    
+    @GetMapping("addReview")
+    public String addReview (Model model){
+        model.addAttribute("review", review_repository.findAll());
+            return "addReview";
+        
+    } 
 
-    @PostMapping("/review")
+    @PostMapping("/addReview")
     public String newReview(Model model, Review review) throws IOException{
 
         review_repository.save(review);
@@ -34,7 +40,7 @@ public class ReviewController {
         return "redirect:/review";
 
     }
-    @RequestMapping("/review")
+    @RequestMapping("/addReview")
     public String newReview(@RequestParam int Valoracion, @RequestParam String text ){
         return "review";
     }
