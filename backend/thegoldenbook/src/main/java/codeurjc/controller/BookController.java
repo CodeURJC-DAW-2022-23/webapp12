@@ -41,7 +41,7 @@ public class BookController{
     return "home";
     }
 
-    @GetMapping("/book/{id}")
+    @GetMapping("/book{id}")
     public String bookInfo(Model model, @PathVariable long id, HttpServletRequest request){
       model.addAttribute("admin", request.isUserInRole("ADMIN"));
       Optional<Book> book = book_repository.findById(id);
