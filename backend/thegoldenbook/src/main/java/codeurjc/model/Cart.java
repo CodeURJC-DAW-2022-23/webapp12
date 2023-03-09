@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -16,6 +17,9 @@ public class Cart{
 
     //private int amounthTotal;
     private double total; 
+
+    @OneToMany(mappedBy = "cart")
+    private List<Book> bookCart;
 
     public Cart() {}
 
@@ -47,5 +51,11 @@ public class Cart{
     public void setTotal(double total) {
         this.total = total;
     }
+    public List<Book> getBookCart() {
+        return bookCart;
+    }
 
+    public void setBookCart(List<Book> bookCart) {
+        this.bookCart = bookCart;
+    }
 }

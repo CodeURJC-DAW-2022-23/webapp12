@@ -81,8 +81,9 @@ public class User {
     public List<Long> getBookCart() {
         return bookCart;
     }
-
+    
     public void setBookCart(List<Long> bookCart) {
         this.bookCart = bookCart;
     }
+    
 }

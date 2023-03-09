@@ -24,12 +24,6 @@ public class CartController {
     @Autowired  
     private CartRepository cart_repository;
     
-    @GetMapping("/cart/{id}")
-    public String book(Model model, @PathVariable long id){
-        model.addAttribute("bookCart", cart_repository.findAll());
-    return "cart";
-    }
-    
     @PostMapping("/newBook")
     public String newBookProcess(Model model, Book book, MultipartFile imageField) throws IOException {
   
