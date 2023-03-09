@@ -24,19 +24,11 @@ public class CartController {
     @Autowired  
     private CartRepository cart_repository;
     
-    @PostMapping("/newBook")
-    public String newBookProcess(Model model, Book book, MultipartFile imageField) throws IOException {
-  
-      if (!imageField.isEmpty()) {
-        book.setImageFile(BlobProxy.generateProxy(imageField.getInputStream(), imageField.getSize()));
-        book.setImage(true);
-      }
-  
-      cart_repository.save(book);
-  
-      model.addAttribute("id", book.getId());
-  
-      return "redirect:/cart";
+    @GetMapping("/cart")
+    public String showCart (Model model, HttpServletRequest request){
+      model.addAttribute("admin", request.isUserInRole("ADMIN"));
+      model.addAttribute("bookCart", cart_repository.findAll());
+    return "cart";
     }
 
 }
