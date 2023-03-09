@@ -3,6 +3,8 @@ package codeurjc.controller;
 import java.io.IOException;
 import java.util.Optional;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +25,9 @@ public class AuthorController{
     private AuthorRepository author_repository;
 
     @GetMapping("/author")
-    public String author(Model model){
+    public String author(Model model,  HttpServletRequest request){
+        model.addAttribute("admin", request.isUserInRole("ADMIN"));
+        
         author_repository.save(new Author("Stephen", "King", "esto es genial"));
         author_repository.save(new Author("Laura", "Gallego", "esto tanbien es genial"));
         model.addAttribute("authorList", author_repository.findAll());
@@ -31,7 +35,9 @@ public class AuthorController{
     }
 
     @GetMapping("/author/{id}")
-    public String showAuthor(Model model, @PathVariable long id){
+    public String showAuthor(Model model, @PathVariable long id, HttpServletRequest request){
+        model.addAttribute("admin", request.isUserInRole("ADMIN"));
+
         Optional<Author> author = author_repository.findById(id);
         if (author.isPresent()){
             model.addAttribute("author", author.get());
@@ -40,7 +46,8 @@ public class AuthorController{
     }
 
     @GetMapping("/authorModification")
-    public String authorModification(Model model){
+    public String authorModification(Model model,HttpServletRequest request){
+        model.addAttribute("admin", request.isUserInRole("ADMIN"));
         return "authorModification";
     }
 
@@ -50,7 +57,7 @@ public class AuthorController{
 
         author_repository.save(author);
 
-        return "redirect:/home";
+        return "redirect:/author";
 
     }
 

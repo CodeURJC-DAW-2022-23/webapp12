@@ -3,6 +3,7 @@ package codeurjc.controller;
 import java.io.IOException;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,49 +24,43 @@ public class UserControler {
     private UserRepository user_repository;
 
     @GetMapping("/login")
-    public String login(){
+    public String login(Model model, HttpServletRequest request){
+        model.addAttribute("admin", request.isUserInRole("ADMIN"));
         return "login";
     }
-    @PostMapping("/login")
-    public String newLogin(Model model, User user) throws IOException{
 
-        user_repository.save(user);
-
-        return "redirect:/login";
-
+    @GetMapping("/loginError")
+    public String loginError(Model model, HttpServletRequest request){
+        model.addAttribute("admin", request.isUserInRole("ADMIN"));
+        return "loginError";
     }
 
-    @RequestMapping("/login")
-    public String newLogin(@RequestParam String email, @RequestParam String password){
-        return "login";
-    }
 
     @GetMapping("/register")
-    public String register (Model model){ 
+    public String register (Model model, HttpServletRequest request){
+        model.addAttribute("admin", request.isUserInRole("ADMIN"));
             return "register";
     }
 
     
     @PostMapping("/register")
     public String newUser(Model model, User user) throws IOException{
-
         user_repository.save(user);
-
-        return "redirect:/register";
-
+        return "/profile";
     }
 
     @RequestMapping("/register")
-    public String newUser(@RequestParam String name, @RequestParam String email, @RequestParam String password){
+    public String newUser(@RequestParam String name, @RequestParam String user, @RequestParam String password){
         return "register";
     }
 
-    /*
+    
     @GetMapping("/profile")
-    public String profile (Model model){ 
-        model.addAttribute("profile", user_repository.findAll());
-            return "profile";
+    public String profile (Model model, HttpServletRequest request){
+        model.addAttribute("admin", request.isUserInRole("ADMIN"));  
+        return "profile";
     }
+    /*
     @GetMapping("/profileModification")
     public String profileModification (Model model){ 
         model.addAttribute("profileModification", user_repository.findAll());
@@ -91,7 +86,6 @@ public class UserControler {
     }
 
 */
-;
 
 }
    

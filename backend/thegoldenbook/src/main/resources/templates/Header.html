@@ -44,6 +44,7 @@
                             <a class="nav-link" href="/profile">Perfil</a>
                         </li>
                         <li class="admin">
+                        {{#admin}}
                         <a href="/newBook">
                             <button class="botonAdmin">Añadir Libro</button>
                         </a>
@@ -53,7 +54,8 @@
                             <button class="botonAdmin">Añadir Autor</button>
                             </a>
                         
-                        </li>                    
+                        </li>
+                        {{/admin}}                    
                     </ul>
                 </div>
             </nav>

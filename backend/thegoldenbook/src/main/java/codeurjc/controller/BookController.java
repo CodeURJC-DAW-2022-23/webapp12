@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,13 +35,15 @@ public class BookController{
     private BookRepository book_repository;
 
     @GetMapping("/home")
-    public String book(Model model){
+    public String book(Model model, HttpServletRequest request){
+      model.addAttribute("admin", request.isUserInRole("ADMIN"));
       model.addAttribute("bookList", book_repository.findAll());
     return "home";
     }
 
     @GetMapping("/book/{id}")
-    public String bookInfo(Model model, @PathVariable long id){
+    public String bookInfo(Model model, @PathVariable long id, HttpServletRequest request){
+      model.addAttribute("admin", request.isUserInRole("ADMIN"));
       Optional<Book> book = book_repository.findById(id);
         if (book.isPresent()){
             model.addAttribute("book", book.get());
@@ -49,7 +52,8 @@ public class BookController{
     }
 
     @GetMapping("/newBook")
-    public String newBook(Model model){
+    public String newBook(Model model, HttpServletRequest request){
+      model.addAttribute("admin", request.isUserInRole("ADMIN"));
       return "newBook";
     }
 
