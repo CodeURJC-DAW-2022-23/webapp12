@@ -3,7 +3,7 @@ package codeurjc.controller;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.http.HttpHeaders;
+import org.springframework.http.HttpHeaders;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
@@ -58,25 +58,33 @@ public class BookController{
     }
 
     @PostMapping("/newBook")
-	  public String newBookProcess(Model model, Book book, MultipartFile imageField) throws IOException {
-
-		  if (!imageField.isEmpty()) {
-			  book.setImageFile(BlobProxy.generateProxy(imageField.getInputStream(), imageField.getSize()));
-			  book.setImage(true);
-		  }
-
-		  book_repository.save(book);
-
-		  return "redirect:/book/";
+    public String newBookProcess(Model model, Book book, MultipartFile imageField) throws IOException {
+  
+      if (!imageField.isEmpty()) {
+        book.setImageFile(BlobProxy.generateProxy(imageField.getInputStream(), imageField.getSize()));
+        book.setImage(true);
+      }
+  
+      book_repository.save(book);
+  
+      model.addAttribute("id", book.getId());
+  
+      return "redirect:/home";
     }
+    
+    @GetMapping("/{id}/image")
+	  public ResponseEntity<Object> downloadImage(@PathVariable long id) throws SQLException, IOException {
 
-    /*@PostMapping("/book/{id}/image")
-	  public ResponseEntity<Object> uploadImage(@PathVariable long id, @RequestParam MultipartFile imageFile ) throws SQLException {
-      Book book = book_repository.findById(id).orElseThrow();
-      URI location = fromCurrentRequest().build().toUri();
-      book.setImage(true);
-      book.setImageFile(BlobProxy.generateProxy(imageFile.getInputStream(), imageFile.getSize()));
-      book_repository.save
-			return ResponseEntity.notFound().build();
-	}*/
-  }
+		  Optional<Book> book = book_repository.findById(id);
+		  if (book.isPresent() && book.get().getImageFile() != null) {
+
+			  InputStreamResource file = new InputStreamResource(book.get().getImageFile().getBinaryStream());
+
+			  return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, "image/jpeg", "image/jpg")
+					.contentLength(book.get().getImageFile().length()).body(file);
+
+		  } else {
+			  return ResponseEntity.notFound().build();
+		  }
+	}
+	}

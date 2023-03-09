@@ -12,19 +12,19 @@
     <div class="recomendationSet flex-container">
                 {{#bookList}}
                 <div>
-                    {{#book.image}}
-                    <img src="/images/">
-                    {{/book.image}}
+                    {{#image}}
+                    <img src="/{{id}}/image" class="image">
+                    {{/image}}
             
-                    {{^book.image}}
-                    <img src="/images/no_image.png">
-                    {{/book.image}} 
+                    {{^image}}
+                    <img src="/images/no_image.png" class="image">
+                    {{/image}} 
                     <br>
                     <br>
                     <div class="information">
                         <a href="/book/{{id}}">{{title}}</a>
                         <p>{{author}}</p>
-                        <p>{{valoracion}}</p>
+                        <p>{{stock}}</p>
                         <p>{{price}}</p>
                         {{#logged}}
                         <input type="submit" value="Añadir" class="button" id="add">
