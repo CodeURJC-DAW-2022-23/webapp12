@@ -1,9 +1,14 @@
 package codeurjc.model;
 
+import java.util.List;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity(name = "UserTable")
 public class User {
@@ -14,9 +19,15 @@ public class User {
 
     private String user;
     private String email;
-    private String password;
+    private String encodedPassword;
 
-   // @OneToMany(mappedBy = "User")
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<String> roles;
+    
+    @ManyToMany(mappedBy = "User")
+    private List<Long> bookCart;
+
+    //@OneToMany(mappedBy = "User")
     //private List<Review> reviews;
 
     public User() {
@@ -24,7 +35,15 @@ public class User {
 
     public User(String user, String password) {
         this.user = user;
-        this.password = password;
+        this.encodedPassword = password;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getUser() {
@@ -43,44 +62,27 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEncodedPassword() {
+        return encodedPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-/*
-    public String getAdress() {
-        return adress;
+    public void setEncodedPassword(String encodedPassword) {
+        this.encodedPassword = encodedPassword;
     }
 
-
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public List<String> getRoles() {
+        return roles;
     }
 
-    
-    public int getPhoneNumber() {
-        return phoneNumber;
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
     }
 
-
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public List<Long> getBookCart() {
+        return bookCart;
     }
 
-
-    public String getFavoriteGenre() {
-        return favoriteGenre;
+    public void setBookCart(List<Long> bookCart) {
+        this.bookCart = bookCart;
     }
-
-    public void setFavoriteGenre(String favoriteGenre) {
-        this.favoriteGenre = favoriteGenre;
-    }
-    
-
-
-
-    */
 }

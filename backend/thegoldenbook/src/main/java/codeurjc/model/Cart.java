@@ -14,13 +14,13 @@ public class Cart{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private int amounthTotal;
+    //private int amounthTotal;
     private double total; 
 
     public Cart() {}
 
-    public Cart(int amounthTotal, double total){
-        this.amounthTotal = amounthTotal;
+    public Cart(double total){
+        //this.amounthTotal = amounthTotal;
         this.total = total;
     }
 
@@ -32,14 +32,14 @@ public class Cart{
         this.id = id;
     }
 
-    public int getAmounthTotal() {
+    /*public int getAmounthTotal() {
         return amounthTotal;
     }
 
     public void setAmounthTotal(int amounthTotal) {
         this.amounthTotal = amounthTotal;
     }
-
+    */
     public double getTotal() {
         return total;
     }
