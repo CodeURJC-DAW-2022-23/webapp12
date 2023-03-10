@@ -64,7 +64,7 @@ public class UserControler {
         model.addAttribute("admin", request.isUserInRole("ADMIN"));  
         return "profile";
     }
-    /*
+    
     @GetMapping("/profileModification")
     public String profileModification (Model model){ 
         model.addAttribute("profileModification", user_repository.findAll());
@@ -89,7 +89,7 @@ public class UserControler {
             return "cart";
     }
 
-*/
+
 
 }
    

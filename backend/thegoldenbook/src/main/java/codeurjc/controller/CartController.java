@@ -32,14 +32,4 @@ public class CartController {
     return "cart";
     }
 
-    @PostMapping("/addbooktocart/{bookId}")
-    public String addToCart (Model model, @RequestParam String bookId, HttpServletRequest request){
-
-    
-      //Book book = bookRepository.findById(bookId)
-
-    //user.getCart().addToCart()
-
-    return "cart";
-    }
 }

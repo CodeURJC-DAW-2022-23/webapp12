@@ -83,13 +83,23 @@ public class User {
     public void setRoles(List<String> roles) {
         this.roles = roles;
     }
+<<<<<<< HEAD
 
+    /*public List<Long> getBookCart() {
+=======
+/*
     public List<Long> getBookCart() {
+>>>>>>> 63776e59a5c5e75efe2eba059df2b62a37aede7b
         return bookCart;
     }
     
     public void setBookCart(List<Long> bookCart) {
         this.bookCart = bookCart;
-    }
+<<<<<<< HEAD
+    }*/
     
+=======
+    }
+    */
+>>>>>>> 63776e59a5c5e75efe2eba059df2b62a37aede7b
 }
