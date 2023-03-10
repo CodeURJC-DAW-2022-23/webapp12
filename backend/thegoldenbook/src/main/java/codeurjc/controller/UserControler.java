@@ -83,12 +83,13 @@ public class UserControler {
         model.addAttribute("Footer", user_repository.findAll());
             return "Footer";
     }
+    /* 
     @GetMapping("/cart")
     public String cart (Model model){ 
         model.addAttribute("cart", user_repository.findAll());
             return "cart";
     }
-
+*/
 
 
 }

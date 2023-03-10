@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.springframework.lang.Nullable;
+
 
 @Entity
 public class Cart{
@@ -17,7 +19,8 @@ public class Cart{
 
     //private int amounthTotal;
     private double total; 
-
+    
+@Nullable
     @OneToMany(mappedBy = "cart")
     private List<Book> bookCart;
 
