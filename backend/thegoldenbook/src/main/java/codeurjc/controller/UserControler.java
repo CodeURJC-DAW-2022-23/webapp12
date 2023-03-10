@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,9 @@ public class UserControler {
 
     @Autowired
     private UserRepository user_repository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @GetMapping("/login")
     public String login(Model model, HttpServletRequest request){
@@ -46,7 +50,7 @@ public class UserControler {
     @PostMapping("/register")
     public String newUser(Model model, User user) throws IOException{
         user_repository.save(user);
-        return "/profile";
+        return "/home";
     }
 
     @RequestMapping("/register")

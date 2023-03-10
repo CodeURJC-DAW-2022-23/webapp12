@@ -24,8 +24,8 @@ public class User {
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roles;
     
-    @ManyToMany(mappedBy = "User")
-    private List<Long> bookCart;
+    //@ManyToMany(mappedBy = "User")
+    //private List<Long> bookCart;
 
     //@OneToMany(mappedBy = "User")
     //private List<Review> reviews;
@@ -33,9 +33,10 @@ public class User {
     public User() {
     }
 
-    public User(String user, String password) {
+    public User(String user, String password, String... roles) {
         this.user = user;
         this.encodedPassword = password;
+        this.roles = List.of(roles);
     }
 
     public long getId() {

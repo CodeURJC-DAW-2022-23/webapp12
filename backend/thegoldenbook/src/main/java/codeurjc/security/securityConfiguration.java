@@ -1,32 +1,38 @@
 package codeurjc.security;
 
+import codeurjc.service.RepositoryUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import java.security.SecureRandom;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 public class securityConfiguration extends WebSecurityConfigurerAdapter {
-    
 
-    
-    @Value("${security.user}")
-    private String user;
-    @Value("${security.encodedPassword}")
-    private String encodedPassword;
+    @Autowired
+	RepositoryUserDetailsService userDetailsService;
+        
+    @Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder(10, new SecureRandom());
+	}
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        PasswordEncoderFactories.createDelegatingPasswordEncoder();
-        auth.inMemoryAuthentication().withUser(user).password("{bcrypt}"+encodedPassword).roles("ADMIN");
-    }
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+	}
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
+        
         //Login
         // Login form
         http.formLogin().loginPage("/login");
@@ -53,9 +59,9 @@ public class securityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/review").permitAll();
 
         //User pages
-        http.authorizeRequests().antMatchers("/cart").hasAnyRole("ADMIN");
-        http.authorizeRequests().antMatchers("/profile").hasAnyRole("ADMIN");
-        http.authorizeRequests().antMatchers("/profileModification").hasAnyRole("ADMIN");
+        http.authorizeRequests().antMatchers("/cart").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/profile").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/profileModification").hasAnyRole("USER");
 
 
         //Admin pages
