@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import org.springframework.lang.Nullable;
+
 import javax.persistence.ManyToMany;
 
 @Entity(name = "UserTable")
@@ -24,11 +27,13 @@ public class User {
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roles;
     
-    //@ManyToMany(mappedBy = "User")
-    //private List<Long> bookCart;
+    @Nullable
+    @ManyToMany(mappedBy = "User")
+    private List<Long> bookCart;
 
-    //@OneToMany(mappedBy = "User")
-    //private List<Review> reviews;
+    @Nullable
+    @OneToMany(mappedBy = "User")
+    private List<Review> reviews;
 
     public User() {
     }
