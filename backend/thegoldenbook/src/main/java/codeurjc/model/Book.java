@@ -9,6 +9,8 @@ import java.sql.Blob;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -36,6 +38,10 @@ public class Book{
     @JsonIgnore
     private Blob imageFile;
     private boolean image;
+
+    @ManyToOne 
+    @JoinColumn(name = "cartId")
+    private Cart cart;
 
     public Book() {}
     

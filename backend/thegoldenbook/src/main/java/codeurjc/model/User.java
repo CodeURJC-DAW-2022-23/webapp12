@@ -78,4 +78,13 @@ public class User {
     public void setRoles(List<String> roles) {
         this.roles = roles;
     }
+
+    public List<Long> getBookCart() {
+        return bookCart;
+    }
+    
+    public void setBookCart(List<Long> bookCart) {
+        this.bookCart = bookCart;
+    }
+    
 }
