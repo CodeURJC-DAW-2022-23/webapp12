@@ -38,9 +38,9 @@ public class ProfileController {
     @Autowired
     private UserRepository user_repository;
 
-    @GetMapping("user/{id}")
+    @GetMapping("(/profile)")
     public String showProfile(Model model, @PathVariable Long id, HttpServletRequest request) {
-        
+        model.addAttribute("admin", request.isUserInRole("ADMIN"));
         Optional<User> user = user_repository.findById(id);
         if(user.isPresent()){
             model.addAttribute("user", user_repository);
@@ -71,7 +71,7 @@ public class ProfileController {
       return "redirect:/profile";
     }
     
-    @GetMapping("/{id}/image")
+    @GetMapping("profile/image")
 	  public ResponseEntity<Object> downloadImage(@PathVariable long id) throws SQLException, IOException {
 
 		  Optional<User> user = user_repository.findById(id);
