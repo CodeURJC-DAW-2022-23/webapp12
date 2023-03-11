@@ -1,17 +1,21 @@
 {{>header}}
 
     <div class="profile-container">
+
         {{#profile.image}}
         <img src="/profile/{{profile.id}}/image">
+        {{/profile.image}}
+
         {{^profile.image}}
         <img src="/images/no_image.png">
-        {{/profile.image}}
         {{/profile.image}}    
         
-        <h1>Tu profile</h1>
-
-        <p>Nombre: {{profile.user}}</p>
-        <p>Correo electrónico: {{profile.email}}</p>
+        <h1>Tu perfil</h1>
+        <p href="/user/{{id}}"> Nombre: {{name}}</p>
+        <p>Correo electrónico: {{email}}</p>
+        <p>Dirección: {{address}}</p>
+        <p>Número de télefono: {{tlf}}</p>
+        <p>Géneros favoritos: {{genre}}</p>
 
         <form action="/profile" method="post">
             <input type="submit" value="Cerrar Sesion" />

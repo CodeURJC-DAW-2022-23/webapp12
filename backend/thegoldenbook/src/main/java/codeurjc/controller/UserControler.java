@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -57,6 +58,12 @@ public class UserControler {
         return "/home";
     }
     
+    @GetMapping("/profileModification")
+    public String profileModification (Model model){ 
+        model.addAttribute("profileModification", user_repository.findAll());
+            return "register";
+    }
+    
     @GetMapping("/profile/{id}")
 	public String profile(Model model, @PathVariable long id, HttpServletRequest request) {
 		User user = user_repository.findById(id).orElseThrow();
@@ -79,13 +86,14 @@ public class UserControler {
         model.addAttribute("Footer", user_repository.findAll());
             return "Footer";
     }
+    /* 
     @GetMapping("/cart")
     public String cart (Model model){ 
         model.addAttribute("cart", user_repository.findAll());
             return "cart";
     }
-
 */
+
 
 }
    

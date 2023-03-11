@@ -25,9 +25,13 @@
                         <a href="/book/{{id}}">{{title}}</a>
                         <p>{{author}}</p>
                         <p>{{stock}}</p>
+                        <p>{{info}}</p>
                         <p>{{price}}</p>
                         {{#logged}}
-                        <input type="submit" value="Añadir" class="button" id="add">
+                        <form action="/addbooktocart/{bookId}" method="post">
+                            
+                             <button type="submit" value="Añadir" class="button" id="add"/>
+                        </form>
                         {{/logged}}
                     </div>
                 </div>
