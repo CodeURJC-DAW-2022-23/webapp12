@@ -7,9 +7,13 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 import org.springframework.lang.Nullable;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.sql.Blob;
 
 import javax.persistence.ManyToMany;
 
@@ -23,6 +27,11 @@ public class User {
     private String user;
     private String email;
     private String encodedPassword;
+
+    @Lob
+    @JsonIgnore
+    private Blob imageFile;
+    private boolean image;
 
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roles;
@@ -83,7 +92,22 @@ public class User {
     public void setRoles(List<String> roles) {
         this.roles = roles;
     }
+    
+    public Blob getImageFile() {
+        return imageFile;
+    }
 
+    public void setImageFile(Blob imageFile) {
+        this.imageFile = imageFile;
+    }
+    
+    public boolean getImage(){
+        return image;
+    }
+
+    public void setImage(boolean image){
+        this.image = image;
+    }
     /*public List<Long> getBookCart() {
         
     public List<Long> getBookCart() {
