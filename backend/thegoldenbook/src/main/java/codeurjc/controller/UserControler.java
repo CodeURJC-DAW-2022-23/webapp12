@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import java.util.Optional;
 
 
 import codeurjc.model.User;
@@ -48,31 +50,25 @@ public class UserControler {
 
     
     @PostMapping("/register")
-    public String newUser(Model model, User user) throws IOException{
-        user_repository.save(user);
+    public String newUser(Model model, @RequestParam String user, @RequestParam String password) throws IOException{
+        //if para comprobar que las dos contraseñas son iguales
+        User usr = new User(user, passwordEncoder.encode(password), "USER");
+        user_repository.save(usr);
         return "/home";
     }
-
-    @RequestMapping("/register")
-    public String newUser(@RequestParam String name, @RequestParam String user, @RequestParam String password){
-        return "register";
-    }
-
     
-    @GetMapping("/profile")
-    public String profile (Model model, HttpServletRequest request){
-        model.addAttribute("admin", request.isUserInRole("ADMIN"));  
-        return "profile";
-    }
+    @GetMapping("/profile/{id}")
+	public String profile(Model model, @PathVariable long id, HttpServletRequest request) {
+		User user = user_repository.findById(id).orElseThrow();
+        User userRequest = user_repository.findByUser(request.getUserPrincipal().getName());
+		if (user.getId() == userRequest.getId()) {
+			return "profile";
+		}
+		
+		return "redirect:/error";
+	}
+
     /*
-    @GetMapping("/profileModification")
-    public String profileModification (Model model){ 
-        model.addAttribute("profileModification", user_repository.findAll());
-            return "register";
-    }
-    
-
-
     @GetMapping("/Header")
     public String Header (Model model){ 
         model.addAttribute("Header", user_repository.findAll());
