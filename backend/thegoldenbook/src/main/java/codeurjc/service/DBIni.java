@@ -38,6 +38,9 @@ public class DBIni {
         authorRepository.save(new Author("Stephen", "King", "Escritor estadounidense de novelas de terror, ficción sobrenatural, misterio, ciencia ficción y literatura fantástica. Sus libros han vendido más de 500 millones de ejemplares, y en su mayoría han sido adaptados al cine y a la televisión."));
 
         //Books
-        bookRepository.save(new Book("Donde los árboles cantan", "Laura Gallego", 15.5 , "3", "Viana, hija única del duque Rocagrís, está prometida al joven robian de Castelmar desde que eran niños. Los dos se aman y se casarán en primavera. Sin embargo, durante los festejos del solsticio de invierno los bárbaros de las estepas comienzan la guerra y tanto Robian como el duque se ven obligados a luchar. En esas circunstancias una doncella como viana no puede hacer otra cosa que esperar su regreso... y, tal vez, prestar atención a las leyendas que se cuentas sobre el Gran Bosque... el lugar donde los árboles cantan.", 5));
+        bookRepository.save(new Book("Donde los árboles cantan", "Laura Gallego", 15.5 , "3", "Cuando el promtido y el padre de Viana han de ir a la guerra contra los bárbaros, ella no puede hacer nama más que esperarlos, y, tal vez, hacer caso a las leyendas que hablan del Gran Bosque, el lugar donde los árboles cantan", 4));
+        bookRepository.save(new Book("El Resplandor", "Stephen King", 20.50, "4", "Esa es la palabra que Danny había visto en el espejo. Y, aunque no sabía leer, entendió que era un mensaje de horror.", 3));
+
+        
     }
 }
