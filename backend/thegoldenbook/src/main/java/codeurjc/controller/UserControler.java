@@ -58,11 +58,19 @@ public class UserControler {
         return "/home";
     }
     
-    @GetMapping("/profileModification")
-    public String profileModification (Model model){ 
-        model.addAttribute("profileModification", user_repository.findAll());
-            return "register";
+    @GetMapping("/profileModification/{id}")
+    public String profileModification (Model model, @PathVariable long id, HttpServletRequest request){ 
+        User user = user_repository.findById(id).orElseThrow();
+        User userRequest = user_repository.findByUser(request.getUserPrincipal().getName());
+        if (user.getId() == userRequest.getId()) {
+			return "profileModification";
+		}
+		
+		return "redirect:/error";
+        
+            
     }
+
     
     @GetMapping("/profile/{id}")
 	public String profile(Model model, @PathVariable long id, HttpServletRequest request) {
