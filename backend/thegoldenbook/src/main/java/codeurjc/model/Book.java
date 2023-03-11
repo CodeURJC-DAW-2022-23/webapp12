@@ -31,7 +31,10 @@ public class Book{
     private int stock;
     private String valoracion;
     //private int reviewAVG;
-
+    
+    @ManyToOne 
+    @JoinColumn(name = "cartId")
+    private Cart cart;
     
 
     @Lob
