@@ -38,7 +38,7 @@ public class ProfileController {
     @Autowired
     private UserRepository user_repository;
 
-    @GetMapping("profile/{id}")
+    @GetMapping("user/{id}")
     public String showProfile(Model model, @PathVariable Long id, HttpServletRequest request) {
         
         Optional<User> user = user_repository.findById(id);
