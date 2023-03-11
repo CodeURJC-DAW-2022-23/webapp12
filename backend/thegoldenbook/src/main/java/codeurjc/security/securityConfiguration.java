@@ -38,11 +38,11 @@ public class securityConfiguration extends WebSecurityConfigurerAdapter {
         http.formLogin().loginPage("/login");
         http.formLogin().usernameParameter("username");
         http.formLogin().passwordParameter("password");
-        http.formLogin().defaultSuccessUrl("/home");
+        http.formLogin().defaultSuccessUrl("/profile");
         http.formLogin().failureUrl("/loginError");
 
         //LogOut
-        http.logout().logoutUrl("/profile");
+        http.logout().logoutUrl("/logOut");
         http.logout().logoutSuccessUrl("/home");
 
         //Public pages
@@ -62,7 +62,6 @@ public class securityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/cart").hasAnyRole("USER");
         http.authorizeRequests().antMatchers("/profile").hasAnyRole("USER");
         http.authorizeRequests().antMatchers("/profileModification").hasAnyRole("USER");
-
 
         //Admin pages
         http.authorizeRequests().antMatchers("/authorModification").hasAnyRole("ADMIN");

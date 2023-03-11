@@ -61,39 +61,17 @@ public class UserControler {
     @GetMapping("/profileModification")
     public String profileModification (Model model){ 
         model.addAttribute("profileModification", user_repository.findAll());
-            return "register";
+            return "profileModification";
     }
-    
-    @GetMapping("/profile/{id}")
-	public String profile(Model model, @PathVariable long id, HttpServletRequest request) {
-		User user = user_repository.findById(id).orElseThrow();
-        User userRequest = user_repository.findByUser(request.getUserPrincipal().getName());
-		if (user.getId() == userRequest.getId()) {
-			return "profile";
-		}
-		
-		return "redirect:/error";
-	}
 
-    /*
-    @GetMapping("/Header")
-    public String Header (Model model){ 
-        model.addAttribute("Header", user_repository.findAll());
-            return "Header";
+    @GetMapping("/profile")
+    public String clientProfile(Model model, HttpServletRequest request) {
+        String name = request.getUserPrincipal().getName();
+        User user = user_repository.findByUser(name);
+        model.addAttribute("id", user.getId());
+        model.addAttribute("user", user.getUser());
+        model.addAttribute("email", user.getEmail());
+        return "profile";
     }
-    @GetMapping("/Footer")
-    public String Footer (Model model){ 
-        model.addAttribute("Footer", user_repository.findAll());
-            return "Footer";
-    }
-    /* 
-    @GetMapping("/cart")
-    public String cart (Model model){ 
-        model.addAttribute("cart", user_repository.findAll());
-            return "cart";
-    }
-*/
-
-
 }
    
