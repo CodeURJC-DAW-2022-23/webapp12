@@ -8,18 +8,22 @@
 
         {{^profile.image}}
         <img src="/images/no_image.png">
-        {{/profile.image}}    
+        {{/profile.image}} 
         
         <h1>Tu perfil</h1>
-        <p href="/user/{{id}}"> Nombre: {{name}}</p>
-        <p>Correo electrónico: {{email}}</p>
-        <p>Dirección: {{address}}</p>
-        <p>Número de télefono: {{tlf}}</p>
-        <p>Géneros favoritos: {{genre}}</p>
+        <p href="/user/{{id}}"> Nombre: {{user}}</p>
 
-        <form action="/profile" method="post">
+        {{#profile.email}}
+        <p> Correo Electronico: {{email}}</p>
+        {{/profile.email}}
+        <a href="/profileModification">
+            <button class="button">Modificar Perfil</button>
+        </a>
+        <form action="/logOut" method="post">
             <input type="submit" value="Cerrar Sesion" />
         </form>
+
+
     </div>
     <hr/>
 

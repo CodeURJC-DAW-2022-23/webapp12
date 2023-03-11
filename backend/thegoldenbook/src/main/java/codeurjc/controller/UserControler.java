@@ -58,6 +58,7 @@ public class UserControler {
         return "/home";
     }
     
+<<<<<<< HEAD
     @GetMapping("/profileModification/{id}")
     public String profileModification (Model model, @PathVariable long id, HttpServletRequest request){ 
         User user = user_repository.findById(id).orElseThrow();
@@ -82,26 +83,22 @@ public class UserControler {
 		
 		return "redirect:/error";
 	}
-
-    /*
-    @GetMapping("/Header")
-    public String Header (Model model){ 
-        model.addAttribute("Header", user_repository.findAll());
-            return "Header";
+=======
+    @GetMapping("/profileModification")
+    public String profileModification (Model model){ 
+        model.addAttribute("profileModification", user_repository.findAll());
+            return "profileModification";
     }
-    @GetMapping("/Footer")
-    public String Footer (Model model){ 
-        model.addAttribute("Footer", user_repository.findAll());
-            return "Footer";
-    }
-    /* 
-    @GetMapping("/cart")
-    public String cart (Model model){ 
-        model.addAttribute("cart", user_repository.findAll());
-            return "cart";
-    }
-*/
+>>>>>>> 4eaa69992ef5425cd74129fd4db83e890d68b80c
 
-
+    @GetMapping("/profile")
+    public String clientProfile(Model model, HttpServletRequest request) {
+        String name = request.getUserPrincipal().getName();
+        User user = user_repository.findByUser(name);
+        model.addAttribute("id", user.getId());
+        model.addAttribute("user", user.getUser());
+        model.addAttribute("email", user.getEmail());
+        return "profile";
+    }
 }
    
