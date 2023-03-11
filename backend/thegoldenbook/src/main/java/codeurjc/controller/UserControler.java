@@ -1,6 +1,7 @@
 package codeurjc.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import java.util.Optional;
@@ -58,7 +63,7 @@ public class UserControler {
         return "/home";
     }
     
-<<<<<<< HEAD
+
     @GetMapping("/profileModification/{id}")
     public String profileModification (Model model, @PathVariable long id, HttpServletRequest request){ 
         User user = user_repository.findById(id).orElseThrow();
@@ -66,11 +71,25 @@ public class UserControler {
         if (user.getId() == userRequest.getId()) {
 			return "profileModification";
 		}
+
 		
-		return "redirect:/error";
-        
+		return "redirect:/error"; 
             
     }
+
+
+
+    @PostMapping("/profileModification")
+    public String profileModification(Model model, @RequestParam String user, @RequestParam String password,@RequestParam String email,HttpServletRequest request) throws IOException{
+        User usr = user_repository.findByUser(request.getUserPrincipal().getName());
+        usr.setEmail(email);
+        usr.setUser(user);
+        usr.setEncodedPassword(password);
+        user_repository.save(usr);
+  
+        return "/profile";
+    }
+
 
     
     @GetMapping("/profile/{id}")
@@ -83,13 +102,13 @@ public class UserControler {
 		
 		return "redirect:/error";
 	}
-=======
+
     @GetMapping("/profileModification")
     public String profileModification (Model model){ 
         model.addAttribute("profileModification", user_repository.findAll());
             return "profileModification";
     }
->>>>>>> 4eaa69992ef5425cd74129fd4db83e890d68b80c
+
 
     @GetMapping("/profile")
     public String clientProfile(Model model, HttpServletRequest request) {
