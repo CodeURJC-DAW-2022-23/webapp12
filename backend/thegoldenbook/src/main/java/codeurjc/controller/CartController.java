@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.engine.jdbc.BlobProxy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +25,11 @@ public class CartController {
 
     @Autowired  
     private CartRepository cart_repository;
-    
+    @Autowired
+    private BookController bookController;
+    @Autowired
+    private UserControler userControler;
+
     @GetMapping("/cart")
     public String showCart (Model model, HttpServletRequest request){
       model.addAttribute("admin", request.isUserInRole("ADMIN"));
