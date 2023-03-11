@@ -39,9 +39,6 @@ public class Book{
     private Blob imageFile;
     private boolean image;
 
-    @ManyToOne 
-    @JoinColumn(name = "cartId")
-    private Cart cart;
 
     public Book() {}
     
