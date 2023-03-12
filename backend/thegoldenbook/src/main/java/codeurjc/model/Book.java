@@ -117,11 +117,11 @@ public class Book{
     public void setImage(boolean image){
         this.image = image;
     }
-    public String getValoracion() {
+    public int getValoracion() {
         return valoracion;
     }
 
-    public void setValoracion(String valoracion) {
+    public void setValoracion(int valoracion) {
         this.valoracion = valoracion;
     }
 }

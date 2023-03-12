@@ -1,4 +1,4 @@
-package codeurjc.model;
+/*package codeurjc.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -48,4 +48,4 @@ public class Review{
     } 
 }
 
-
+*/

@@ -33,12 +33,12 @@ public class User {
     private List<String> roles;
     
     @Nullable
-    @ManyToMany(mappedBy = "User")
+    @ManyToMany
     private List<Book> cart = new ArrayList<>();
 
-    @Nullable
-    @OneToMany(mappedBy = "User")
-    private List<Review> reviews;
+   /* @Nullable
+    @OneToMany(mappedBy = "user")
+    private List<Review> reviews;*/
 
     @Lob
     @JsonIgnore
