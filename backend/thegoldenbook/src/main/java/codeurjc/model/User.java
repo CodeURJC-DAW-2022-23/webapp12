@@ -1,5 +1,6 @@
 package codeurjc.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -17,7 +18,7 @@ import java.sql.Blob;
 
 import javax.persistence.ManyToMany;
 
-@Entity(name = "UserTable")
+@Entity
 public class User {
 
     @Id
@@ -28,22 +29,24 @@ public class User {
     private String email;
     private String encodedPassword;
 
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<String> roles;
+    
+    @Nullable
+    @ManyToMany(mappedBy = "User")
+    private List<Book> cart = new ArrayList<>();
+
+    @Nullable
+    @OneToMany(mappedBy = "User")
+    private List<Review> reviews;
+
     @Lob
     @JsonIgnore
     private Blob imageFile;
     private boolean image;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    private List<String> roles;
-    /* 
-    @Nullable
-    @ManyToMany(mappedBy = "User")
-    private List<Long> bookCart;
+    private double totalPrice = 0;
 
-    @Nullable
-    @OneToMany(mappedBy = "User")
-    private List<Review> reviews;
-*/
     public User() {
     }
 
@@ -108,14 +111,21 @@ public class User {
     public void setImage(boolean image){
         this.image = image;
     }
-    /*public List<Long> getBookCart() {
         
-    public List<Long> getBookCart() {
-        return bookCart;
+    public List<Book> getCart() {
+        return this.cart;
     }
     
-    public void setBookCart(List<Long> bookCart) {
-        this.bookCart = bookCart;
-    }*/
+    public void setCart(List<Book> cart) {
+        this.cart = cart;
+    }
+
+    public double getTotalPrice() {
+        return this.totalPrice;
+    }
+
+    public void setTotalPrice(float totalPrice) {
+        this.totalPrice = totalPrice;
+    }
     
 }
