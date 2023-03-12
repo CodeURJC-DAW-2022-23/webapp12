@@ -2,24 +2,31 @@
 <h1 class="form-title">Modificar Perfil</h1>
 <div class="container-fluid">
     <form class="row" action="/profileModification" method="post" enctype="multipart/form-data" >
+        <div class="input-contenedor">
+            <input type="hidden"  value="{{id}}" placeholder = "id" name="id">
+        </div>
     <div class="input-contenedor">
-        <input type="text"  placeholder="Nombre" name="user">
+        <input type="text"  value="{{user}}" placeholder = "Nombre de usuario" name="user">
     </div>
+    {{#email}}
     <div class="input-contenedor">
-        <input type="text" placeholder="Correo electrónico" name="email">
+    <input type="text" value="{{email}}" placeholder="Correo Electronico" name="email">
     </div>
+    {{/email}}
+    {{^email}}
     <div class="input-contenedor">
-        <input type="password"  placeholder="Nueva contraseña" name="newPassword">
-    </div>
+        <input type="text" placeholder="Correo Electronico" name="email">
+        </div>
+    {{/email}}
     <div class="col-12">
         <label for="myfile">Imagen de perfil:</label>
         <input type="file" id="myfile" name="myfile" accept=".jpg">
     </div>
     <div class="col-6 container-button">
-        <input type="button" value="Cancelar" class="button" id="cancel" onclick="window.location.href='perfil.html'">
+        <input type="button" value="Cancelar" class="button" id="cancel" onclick="window.location.href='/profile'">
         </div>
     <div class="col-6 container-button">
-        <input type="button" value="Modificar" class="button" id="accept" onclick="window.location.href='perfil.html'">
+        <input type="submit" value="Modificar" class="button" id="accept">
     </div>
     <input type="hidden" name="_csrf" value="{{token}}">
     </form>
