@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
+import org.springframework.lang.Nullable;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -25,16 +27,23 @@ public class Book{
     private long id;
 
     private String title;
-    private String author;
     private double price;
     private String info;
     private int stock;
-    private int valoracion;
+    private int totalValoration;
     //private int reviewAVG;
     
+    @ManyToOne
+    private Author author;
+
     @ManyToOne 
     @JoinColumn(name = "cartId")
     private Cart cart;
+
+    
+    @Nullable
+    @OneToMany
+    private List<Review> reviews;
     
 
     @Lob
@@ -45,11 +54,9 @@ public class Book{
 
     public Book() {}
     
-    public Book(String title, String author, double price, int valoracion, String info, int stock){
+    public Book(String title, double price, String info, int stock){
         this.title = title;
-        this.author = author;
         this.price = price;
-        this.valoracion = valoracion;
         this.info = info;
         this.stock = stock;
     }
@@ -70,11 +77,11 @@ public class Book{
         this.title = title;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
@@ -117,11 +124,17 @@ public class Book{
     public void setImage(boolean image){
         this.image = image;
     }
-    public int getValoracion() {
-        return valoracion;
+    public int getTotalValoration() {
+        return totalValoration;
     }
 
-    public void setValoracion(int valoracion) {
-        this.valoracion = valoracion;
+    public void setValoracion(int totalValoration) {
+        this.totalValoration = totalValoration;
     }
+    
+    public void addReview(Review review){
+        this.reviews.add(review);
+        this.totalValoration = (totalValoration+review.getValoracion())/reviews.size();
+    }
+    
 }

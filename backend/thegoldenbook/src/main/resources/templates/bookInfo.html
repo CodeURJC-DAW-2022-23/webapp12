@@ -1,4 +1,5 @@
 {{>header}}
+
     <div class="book container-fluid">
         <div class="row" id="Top">
             <div class="col-10" id="book">
@@ -22,8 +23,8 @@
                     </div>
                     
                     <div id="clasificacion row">
-                        <div class="genre col-2">Fantasia</div>
-                        <div class="genre col-2">Juvenil</div>
+                        <!--<div class="genre col-2">Fantasia</div>-->
+                        <!--<<div class="genre col-2">Juvenil</div>-->
                         <div class="calificacion col-4">
                             {{#book.valoracion}}
                             <div class="rateYo" id="rateYo1"></div>
@@ -36,9 +37,13 @@
         <div id="buy" class="col-2">
                 <p>{{book.price}}</p>
                 {{#logged}}
-                <button class="button" id="cart" type="button">Añadir a Cesta</button>
-                <button class="button" id="favorite" type="button">Favoritos</button>
-                <button class="button" id="addReview" type="button">Añadir Reseña</button>   
+                <a href="addToCart/{{id}}"></a>
+                    <button class="button" id="cart" type="button">Añadir a Cesta</button>
+                </a>
+                <!--<button class="button" id="favorite" type="button">Favoritos</button>-->
+                <a href="addReview.html">
+                    <button class="button" id="addReview" type="button">Añadir Reseña</button>  
+                </a> 
                 {{/logged}}  
         </div>
     </div>
@@ -48,22 +53,17 @@
             <p>{{book.author}}</p>
         </div>
         <h3>Reseñas</h3>
+            #ReviewList
             <div class="reviewSet">
                 <ul class="read-items">
+                    {{^review}}
+                    <p>Este libro actualmente no tiene reseñas</p>
+                    {{/review}}
                     {{#review}}
                         <li><a href="/review/{{id}}">{{>review}}</a></li>
                     {{/review}}
                 </ul>
             </div>
-        </div>
     </div>
-    <div class="recomendationSet flex-container">
-        <div class="recomendation">
-            <ul class="read-items">
-                {{#books}}
-                <li><a href="/books/{{id}}">{{>book}}</a></li>
-                {{/books}}
-            </ul>
-        </div>
-        <hr />
+
 {{>footer}}
