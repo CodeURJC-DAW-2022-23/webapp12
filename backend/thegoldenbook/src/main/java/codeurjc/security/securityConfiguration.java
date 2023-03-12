@@ -66,9 +66,6 @@ public class securityConfiguration extends WebSecurityConfigurerAdapter {
         //Admin pages
         http.authorizeRequests().antMatchers("/authorModification").hasAnyRole("ADMIN");
         http.authorizeRequests().antMatchers("/newBook").hasAnyRole("ADMIN");
-
-        //Disable CSRF 
-        http.csrf().disable();
     }
 }
 

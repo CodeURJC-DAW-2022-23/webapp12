@@ -20,7 +20,8 @@
         </div>
     <div class="col-6 container-button">
         <input type="button" value="Modificar" class="button" id="accept" onclick="window.location.href='perfil.html'">
-        </div>
+    </div>
+    <input type="hidden" name="_csrf" value="{{token}}">
     </form>
 </div>
 {{>footer}}

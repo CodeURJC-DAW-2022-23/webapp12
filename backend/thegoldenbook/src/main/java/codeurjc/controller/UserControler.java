@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.security.web.csrf.CsrfToken;
+
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
@@ -37,6 +39,8 @@ public class UserControler {
 
     @GetMapping("/login")
     public String login(Model model, HttpServletRequest request){
+        CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+        model.addAttribute("token", token.getToken());
         model.addAttribute("admin", request.isUserInRole("ADMIN"));
         return "login";
     }
@@ -50,6 +54,8 @@ public class UserControler {
 
     @GetMapping("/register")
     public String register (Model model, HttpServletRequest request){
+        CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+        model.addAttribute("token", token.getToken());
         model.addAttribute("admin", request.isUserInRole("ADMIN"));
             return "register";
     }
@@ -63,45 +69,15 @@ public class UserControler {
         return "/home";
     }
     
-
-    @GetMapping("/profileModification/{id}")
-    public String profileModification (Model model, @PathVariable long id, HttpServletRequest request){ 
-        User user = user_repository.findById(id).orElseThrow();
-        User userRequest = user_repository.findByUser(request.getUserPrincipal().getName());
-        if (user.getId() == userRequest.getId()) {
-			return "profileModification";
-		}
-
-		
-		return "redirect:/error"; 
-            
-    }
-
-
-
     @PostMapping("/profileModification")
     public String profileModification(Model model, @RequestParam String user, @RequestParam String password,@RequestParam String email,HttpServletRequest request) throws IOException{
         User usr = user_repository.findByUser(request.getUserPrincipal().getName());
         usr.setEmail(email);
         usr.setUser(user);
-        usr.setEncodedPassword(password);
+        usr.setEncodedPassword(passwordEncoder.encode(password));
         user_repository.save(usr);
-  
         return "/profile";
     }
-
-
-    
-    @GetMapping("/profile/{id}")
-	public String profile(Model model, @PathVariable long id, HttpServletRequest request) {
-		User user = user_repository.findById(id).orElseThrow();
-        User userRequest = user_repository.findByUser(request.getUserPrincipal().getName());
-		if (user.getId() == userRequest.getId()) {
-			return "profile";
-		}
-		
-		return "redirect:/error";
-	}
 
     @GetMapping("/profileModification")
     public String profileModification (Model model){ 

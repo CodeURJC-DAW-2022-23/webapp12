@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.security.web.csrf.CsrfToken;
+
 
 import codeurjc.model.Author;
 import codeurjc.model.Book;
@@ -51,6 +53,8 @@ public class AuthorController{
 
     @GetMapping("/authorModification")
     public String authorModification(Model model,HttpServletRequest request){
+        CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+        model.addAttribute("token", token.getToken());
         model.addAttribute("admin", request.isUserInRole("ADMIN"));
         return "authorModification";
     }

@@ -20,7 +20,8 @@
             <button class="button">Modificar Perfil</button>
         </a>
         <form action="/logOut" method="post">
-            <input type="submit" value="Cerrar Sesion" />
+            <input type="submit" value="Cerrar Sesion"/>
+            <input type="hidden" name="_csrf"  value="{{token}}">
         </form>
 
 

@@ -2,15 +2,17 @@
 <h1>Añade una reseña</h1>
 <form class="contenedor" action="/addReview" method="post" enctype="multipart/form-data">
     <div class="input-contenedor">
-       
         <input type="number" placeholder="Comentario" name="Valoracion">
     </div>
     <div class="input-contenedor">
-
         <input type="text" placeholder="text" name="text">
     </div>
-    
+    <div>
         <input type="submit" value="Añadir reseña" class="button">
+    </div>
+    <div>
+        <input type="hidden" name="_csrf" value="{{token}}">
+    </div>
     
 </form>
 {{>footer}}
