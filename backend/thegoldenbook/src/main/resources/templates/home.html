@@ -29,8 +29,8 @@
                         <p>{{price}}</p>
                         {{#logged}}
                         <form action="/addbooktocart/{bookId}" method="post">
-                            
-                             <button type="submit" value="Añadir" class="button" id="add"/>
+                            <button type="submit" value="Añadir" class="button" id="add">
+                            <input type="hidden" name="_csrf" value="{{token}}">
                         </form>
                         {{/logged}}
                     </div>

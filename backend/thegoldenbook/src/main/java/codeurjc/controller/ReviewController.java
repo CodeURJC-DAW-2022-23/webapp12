@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import javax.servlet.http.HttpServletRequest;
+import org.springframework.security.web.csrf.CsrfToken;
 
 import codeurjc.model.Review;
 import codeurjc.repository.ReviewRepository;
@@ -26,7 +28,9 @@ public class ReviewController {
         
     }    
     @GetMapping("addReview")
-    public String addReview (Model model){
+    public String addReview (Model model, HttpServletRequest request){
+        CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+        model.addAttribute("token", token.getToken());
         model.addAttribute("review", review_repository.findAll());
             return "addReview";
         

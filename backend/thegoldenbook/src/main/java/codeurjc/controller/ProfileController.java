@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.security.web.csrf.CsrfToken;
 
 import codeurjc.model.Book;
 import codeurjc.model.User;
@@ -40,20 +41,22 @@ public class ProfileController {
 
     @GetMapping("(/profile)")
     public String showProfile(Model model, @PathVariable Long id, HttpServletRequest request) {
-        model.addAttribute("admin", request.isUserInRole("ADMIN"));
-        Optional<User> user = user_repository.findById(id);
-        if(user.isPresent()){
-            model.addAttribute("user", user_repository);
-        }
-        
-        return "profile";
+      CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+      model.addAttribute("token", token.getToken());
+      model.addAttribute("admin", request.isUserInRole("ADMIN"));
+      Optional<User> user = user_repository.findById(id);
+      if(user.isPresent()){
+          model.addAttribute("user", user_repository);
+      }  
+      return "profile";
     }
 
     @GetMapping("/profileModification")
     public String profileModification(Model model, HttpServletRequest request) {
-    model.addAttribute("user", request.isUserInRole("USER"));
-        
-        return "profileModification";
+      CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+      model.addAttribute("token", token.getToken());
+      model.addAttribute("user", request.isUserInRole("USER"));
+      return "profileModification";
     }
 
     @PostMapping("/profileModification")
