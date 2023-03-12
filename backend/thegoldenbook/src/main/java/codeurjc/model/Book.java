@@ -29,7 +29,7 @@ public class Book{
     private double price;
     private String info;
     private int stock;
-    private String valoracion;
+    private int valoracion;
     //private int reviewAVG;
     
     @ManyToOne 
@@ -45,7 +45,7 @@ public class Book{
 
     public Book() {}
     
-    public Book(String title, String author, double price, String valoracion, String info, int stock){
+    public Book(String title, String author, double price, int valoracion, String info, int stock){
         this.title = title;
         this.author = author;
         this.price = price;
@@ -117,11 +117,11 @@ public class Book{
     public void setImage(boolean image){
         this.image = image;
     }
-    public String getValoracion() {
+    public int getValoracion() {
         return valoracion;
     }
 
-    public void setValoracion(String valoracion) {
+    public void setValoracion(int valoracion) {
         this.valoracion = valoracion;
     }
 }

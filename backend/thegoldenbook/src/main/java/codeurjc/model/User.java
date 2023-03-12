@@ -33,12 +33,12 @@ public class User {
     private List<String> roles;
     
     @Nullable
-    @ManyToMany(mappedBy = "User")
+    @ManyToMany
     private List<Book> cart = new ArrayList<>();
 
-    @Nullable
-    @OneToMany(mappedBy = "User")
-    private List<Review> reviews;
+   /* @Nullable
+    @OneToMany(mappedBy = "user")
+    private List<Review> reviews;*/
 
     @Lob
     @JsonIgnore
@@ -124,8 +124,23 @@ public class User {
         return this.totalPrice;
     }
 
-    public void setTotalPrice(float totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
-    
+
+    public void addBookToCart(Book book) {
+        this.cart.add(book);
+        this.totalPrice += book.getPrice();
+    }
+
+    public void removeGameFromCart(Book book) {
+        this.cart.remove(book);
+        this.totalPrice -= book.getPrice();
+    }
+
+    public void purchase() {
+        this.cart.clear();
+        this.totalPrice = 0;
+    }
+
 }

@@ -3,18 +3,31 @@
         <div class="row" id="Top">
             <div class="col-10" id="book">
                 <div class="row">
-        
-                    <div id="Titulo">
-                        <h1>{{book.title}}</h1>
+                    <div class="col-4">
+                        {{#image}}
+                        <img src="/{{id}}/image" class="image">
+                        {{/image}}
+                
+                        {{^image}}
+                        <img src="/images/noImage.jpg" class="image">
+                        {{/image}} 
                     </div>
-                    <div id="Autor">
-                        <h2>{{book.author}}</h2>
+                    <div class="col-8">
+                        <div id="Titulo">
+                            <h1>{{book.title}}</h1>
+                        </div>
+                        <div id="Autor">
+                            <h2>{{book.author}}</h2>
+                        </div>
                     </div>
+                    
                     <div id="clasificacion row">
                         <div class="genre col-2">Fantasia</div>
                         <div class="genre col-2">Juvenil</div>
                         <div class="calificacion col-4">
+                            {{#book.valoracion}}
                             <div class="rateYo" id="rateYo1"></div>
+                            {{/book.valoracion}}
                         </div>
                     </div>
                 </div>
