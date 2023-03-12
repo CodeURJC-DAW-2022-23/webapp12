@@ -15,7 +15,7 @@ import codeurjc.model.Book;
 import codeurjc.service.CargarMasService;
 
 @Controller
-public class CargarMas {
+public class CargarMasController {
     @Autowired
 	private  CargarMasService cargarMasService;
 
