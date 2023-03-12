@@ -29,16 +29,18 @@ import org.springframework.security.web.csrf.CsrfToken;
 
 import codeurjc.model.Book;
 import codeurjc.repository.BookRepository;
-import codeurjc.repository.ReviewRepository;
+import codeurjc.model.Author;
+import codeurjc.repository.AuthorRepository;
+
 
 @Controller
 public class BookController{
 
     @Autowired
     private BookRepository book_repository;
+
     @Autowired
-    private ReviewRepository review_repository;
-  
+    private AuthorRepository author_repository;
 
     @GetMapping("/home")
     public String book(Model model, HttpServletRequest request){
@@ -46,7 +48,7 @@ public class BookController{
 		  model.addAttribute("token", token.getToken());
       model.addAttribute("admin", request.isUserInRole("ADMIN"));
       model.addAttribute("bookList", book_repository.findAll());
-    return "home";
+      return "home";
     }
 
     @GetMapping("/book/{id}")

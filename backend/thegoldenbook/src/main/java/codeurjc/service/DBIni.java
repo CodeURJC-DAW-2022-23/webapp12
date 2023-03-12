@@ -3,6 +3,8 @@ package codeurjc.service;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -12,6 +14,9 @@ import codeurjc.model.Author;
 import codeurjc.repository.AuthorRepository;
 import codeurjc.model.Book;
 import codeurjc.repository.BookRepository;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.hibernate.engine.jdbc.BlobProxy;
 
 @Service
 public class DBIni {
@@ -40,6 +45,13 @@ public class DBIni {
         Author author4 = new Author("Gema", "Bonnin", "Escritora y traductora española. Estudió Filología Inglesa en la Universidad Complutense de Madrid.");
         Author author5 = new Author("Agatha", "Christie", "Escritora y dramaturga británica, fallecida en 1976, especializada en el genero policial, por cuyo trabajo obtuvo reconocimientoa nivel internacional. Publicó 66 novelas policiacas, 6 novelas rosas y 14 cuentos, además de un par de obras de teatro.");
         
+        setAuthorImage(author1, "/static/Images/author1.jpeg");
+        setAuthorImage(author2, "/static/Images/author2.jpg");
+        setAuthorImage(author3, "/static/Images/author3.jpeg");
+        setAuthorImage(author4, "/static/Images/author4.jpeg");
+        setAuthorImage(author5, "/static/Images/author5.jpeg");
+
+
         authorRepository.save(author1);
         authorRepository.save(author2);
         authorRepository.save(author3);
@@ -60,7 +72,31 @@ public class DBIni {
         Book book11 = new Book("Muerte en el Nilo", 19.00, "Durante unas placenteras vacaciones en Egipto, el detective Hércoles Poirot coincide con Linnet y Simon, unos conocidos suyos. El encanto de los maravillosos días se rompe cuando Linnet aparece muerta de un disparo en la cabeza.", 10);
         Book book12 = new Book("Asesinato en el Orient Express", 19.00, "Una fuerte tormenta detiene el Orient Express, tren donde viaja Hércules Poirot. En el compartimiento vecino asesinan a Samuel E. Ratchett. Poirot aprovechará para indagar entre los ocupantes del vagón, quienes son los únicos posibles autores del crimen.", 10);
 
+        book1.setAuthor(author1);
+        book2.setAuthor(author1);
+        book3.setAuthor(author1);
+        book4.setAuthor(author2);
+        book5.setAuthor(author2);
+        book6.setAuthor(author3);
+        book7.setAuthor(author3);
+        book8.setAuthor(author3);
+        book9.setAuthor(author4);
+        book10.setAuthor(author5);
+        book11.setAuthor(author5);
+        book12.setAuthor(author5);
 
+        setBookImage(book1, "/static/Images/book1.jpeg");
+        setBookImage(book2, "/static/Images/book2.jpeg");
+        setBookImage(book3, "/static/Images/book3.jpeg");
+        setBookImage(book4, "/static/Images/book4.jpeg");
+        setBookImage(book5, "/static/Images/book5.jpeg");
+        setBookImage(book6, "/static/Images/book6.jpeg");
+        setBookImage(book7, "/static/Images/book7.jpeg");
+        setBookImage(book8, "/static/Images/book8.jpeg");
+        setBookImage(book9, "/static/Images/book9.jpeg");
+        setBookImage(book10, "/static/Images/book10.jpeg");
+        setBookImage(book11, "/static/Images/book11.png");
+        setBookImage(book12, "/static/Images/book12.png");
 
 
         bookRepository.save(book1);
@@ -75,6 +111,26 @@ public class DBIni {
         bookRepository.save(book10);
         bookRepository.save(book11);
         bookRepository.save(book12);
+    }
 
+    public void setAuthorImage(Author author, String classpathResource){
+        try{
+            author.setImage(true);
+            Resource image = new ClassPathResource(classpathResource);
+            author.setImageFile(BlobProxy.generateProxy(image.getInputStream(), image.contentLength()));
+        }
+        catch(IOException e){
+
+        }
+	}
+
+    public void setBookImage(Book book, String classpathResource){
+        try{
+            book.setImage(true);
+            Resource image = new ClassPathResource(classpathResource);
+            book.setImageFile(BlobProxy.generateProxy(image.getInputStream(), image.contentLength()));
+        }
+        catch(IOException e){
+        }
     }
 }

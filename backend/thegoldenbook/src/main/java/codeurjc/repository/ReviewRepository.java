@@ -1,4 +1,4 @@
-package codeurjc.repository;
+/*package codeurjc.repository;
 
 import java.util.Optional;
 
@@ -25,3 +25,4 @@ public interface ReviewRepository extends JpaRepository <Review, Long> {
     public int countByBookAndNotUser(Book book, User user);
 
 }
+*/

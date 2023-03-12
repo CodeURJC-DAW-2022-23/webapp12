@@ -5,11 +5,11 @@
                 <div class="row">
                     <div class="col-4">
                         {{#image}}
-                        <img src="/{{id}}/image" class="image">
+                            <img src="/{{id}}/image" class="image">
                         {{/image}}
-                
+            
                         {{^image}}
-                        <img src="/images/noImage.jpg" class="image">
+                            <img src="/images/noImage.jpg" class="image">
                         {{/image}} 
                     </div>
                     <div class="col-8">
@@ -17,13 +17,11 @@
                             <h1>{{book.title}}</h1>
                         </div>
                         <div id="Autor">
-                            <h2>{{book.author}}</h2>
+                            <h2>{{book.author.firstName}} {{book.author.lastName}}</h2>
                         </div>
                     </div>
                     
                     <div id="clasificacion row">
-                        <div class="genre col-2">Fantasia</div>
-                        <div class="genre col-2">Juvenil</div>
                         <div class="calificacion col-4">
                             {{#book.valoracion}}
                             <div class="rateYo" id="rateYo1"></div>
@@ -34,7 +32,7 @@
             </div>
         </div>
         <div id="buy" class="col-2">
-                <p>{{book.price}}</p>
+                <p>{{book.price}}  €</p>
                 {{#logged}}
                 <button class="button" id="cart" type="button">Añadir a Cesta</button>
                 <button class="button" id="favorite" type="button">Favoritos</button>
@@ -45,7 +43,7 @@
     <div id="info">
         <div id="Sinopsis">
             <h3>Sinopsis</h3>
-            <p>{{book.author}}</p>
+            <p>{{book.info}}</p>
         </div>
         <h3>Reseñas</h3>
             <div class="reviewSet">

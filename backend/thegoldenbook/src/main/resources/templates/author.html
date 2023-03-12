@@ -4,17 +4,17 @@
     <div class="row">
         <h2 class="name">{{author.firstName}} {{author.lastName}}</h2>
 
-        {{#author.image}}
+        {{#image}}
         <div class="col-sm-12 col-md-6 author-img">
-            <img src="/images/{{author.id}}">
-        </div>            
-        {{/author.image}}
-
-        {{^author.image}}
-        <div class="col-sm-12 col-md-6 author-img">
-            <img src="/images/no_image.png">
+            <img src="/{{id}}/image" class="image">
         </div>
-        {{/author.image}} 
+        {{/image}}
+            
+        {{^image}}
+        <div class="col-sm-12 col-md-6 author-img">
+            <img src="/images/noImage.jpg" class="image">
+        </div>
+        {{/image}}  
 
         <div class="col-sm-12 col-md-6 information">
             <p>{{author.info}}</p>
@@ -23,10 +23,11 @@
         {{#author.books}}
         <div class="recomendationSet flex-container">
             {{#image}}
-            <img src="/images/{{id}}.jpg">
+                <img src="/{{id}}/image" class="image">
             {{/image}}
+            
             {{^image}}
-            <img src="/images/no_image.png">
+                <img src="/images/noImage.jpg" class="image">
             {{/image}} 
             <br><br>
             <div class="information">
