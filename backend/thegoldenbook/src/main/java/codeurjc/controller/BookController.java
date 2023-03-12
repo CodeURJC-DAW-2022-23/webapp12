@@ -29,12 +29,16 @@ import org.springframework.security.web.csrf.CsrfToken;
 
 import codeurjc.model.Book;
 import codeurjc.repository.BookRepository;
+import codeurjc.repository.ReviewRepository;
 
 @Controller
 public class BookController{
 
     @Autowired
     private BookRepository book_repository;
+    @Autowired
+    private ReviewRepository review_repository;
+  
 
     @GetMapping("/home")
     public String book(Model model, HttpServletRequest request){
