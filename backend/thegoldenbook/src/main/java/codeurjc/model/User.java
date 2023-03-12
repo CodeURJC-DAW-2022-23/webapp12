@@ -124,8 +124,23 @@ public class User {
         return this.totalPrice;
     }
 
-    public void setTotalPrice(float totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
-    
+
+    public void addBookToCart(Book book) {
+        this.cart.add(book);
+        this.totalPrice += book.getPrice();
+    }
+
+    public void removeGameFromCart(Book book) {
+        this.cart.remove(book);
+        this.totalPrice -= book.getPrice();
+    }
+
+    public void purchase() {
+        this.cart.clear();
+        this.totalPrice = 0;
+    }
+
 }
