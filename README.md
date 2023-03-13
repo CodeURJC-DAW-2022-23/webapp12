@@ -142,7 +142,7 @@ https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook
 https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/resources/templates
 
 #JESÚS PÉREZ SÁNCHEZ#
-- Durante la realización de la fase 2, he trabajado mayoritariamente en la realización de los distintos templates de la aplicación, también he trabajado en la creación de entidades (concrétamente user, book y author) y en los controladores con métodos para crear un libro y crear un autor. 
+- Durante la realización de la fase 2, he trabajado en la realización de los distintos templates de la aplicación, pero mayoritariamente he trabajado en la creación de entidades (concrétamente user, book y author) y en los controladores con métodos para crear un libro y crear un autor. 
 
 **5 commits principales**
 
