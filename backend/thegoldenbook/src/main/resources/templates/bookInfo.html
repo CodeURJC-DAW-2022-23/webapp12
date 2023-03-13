@@ -51,17 +51,18 @@
             <p>{{book.info}}</p>
         </div>
         <h3>Reseñas</h3>
-            #ReviewList
+            {{^ReviewList}}
+            <p>Este libro actualmente no tiene reseñas</p>
+            {{/ReviewList}}
+            {{#ReviewList}}
             <div class="reviewSet">
                 <ul class="read-items">
-                    {{^review}}
-                    <p>Este libro actualmente no tiene reseñas</p>
-                    {{/review}}
                     {{#review}}
                         <li><a href="/review/{{id}}">{{>review}}</a></li>
                     {{/review}}
                 </ul>
             </div>
+            {{/ReviewList}}
     </div>
 
 {{>footer}}
