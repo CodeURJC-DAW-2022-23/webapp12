@@ -57,7 +57,7 @@ Habilitar una sección de recomedados para aquellos usuarios que compraron o tie
 
 ### PANTALLAS DE LA APLICACIÓN WEB 
 
---FASE 1  
+# FASE 1  
 
 * Pantallas comunes a todos los usuarios: 
 
@@ -100,7 +100,7 @@ Habilitar una sección de recomedados para aquellos usuarios que compraron o tie
 
 ![diagrama de navegacion completo](https://user-images.githubusercontent.com/123741250/218428540-8080e049-ea30-4d82-8f57-f911f9dae78c.png)
 
- ###FASE 2 
+ # FASE 2 
  
  * Navegación
  
@@ -130,7 +130,7 @@ Contraseña de MySQL: macarrones
 
 * Participación de miembros
 
-# Laila El Khattabi El Hassnaoui 
+### Laila El Khattabi El Hassnaoui 
 
 -Durante la realizacón de la fase 2 he colaborado en la realización y edición de los templates, por otra parte he trabajado  con los controladores para el correcto de funcionamiento de la página  e inicializado de los objetos de la base de datos.
 
@@ -153,7 +153,8 @@ https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook
 https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/java/codeurjc/service
 https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/resources/templates
 
-# JESÚS PÉREZ SÁNCHEZ
+### Jesús Pérez Sánchez
+
 - Durante la realización de la fase 2, he trabajado en la realización de los distintos templates de la aplicación, pero mayoritariamente he trabajado en la creación de entidades (concrétamente user, book y author) y en los controladores con métodos para crear un libro y crear un autor. 
 
 ** 5 commits principales
@@ -175,7 +176,7 @@ https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook
 * Author - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Book.java
 * Book - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Author.java
 
-# Paula Monrobel Ugidos
+### Paula Monrobel Ugidos
 - Durante la realización de la fase 2 he trabajado en la parte de seguridad de la aplicación y en la inicialización de la Base de Datos con todos los Autores y Libros.
 
 ** 5 commits principales
@@ -194,7 +195,7 @@ https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook
 
 * DBIni - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/service/DBIni.java
 
-* RepositoryUserDetailsService - https://github.com/CodeURJC-DAW-2022 23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/service/RepositoryUserDetailsService.java
+* RepositoryUserDetailsService - https://github.com/CodeURJC-DAW-2022- 23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/service/RepositoryUserDetailsService.java
 
 * CSRFHandlerConfiguration - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/security/CSRFHandlerConfiguration.java
 
@@ -202,7 +203,7 @@ https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook
 
 * Book - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Author.java
 
-# Gabriel Serrano Díaz
+### Gabriel Serrano Díaz
 
 • Mi trabajo en la segunda fase se ha basado en el desarrollo de templates, el desarrollo de los controladores y repositorios de book y Author (y de profule aunque no se muestre correctamente) y el intento en AJAX.
 
@@ -230,7 +231,7 @@ ce89a68dafab135ac4b82dff02b23e61d812d1f9
 
 · https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/resources/static/js/CargarMas.js (intenté hacer el js pero no termina funcionando bien)
 
-# Xavier Medina Salas
+### Xavier Medina Salas
 
 · Durante la realización de la fase 2, he trabajado en la realización de los varios templates de la aplicación como home, book y header, después he trabajado en la creación de entidad de book, user y review. Para finalizar en los controladores con métodos para crear un libro y crear un review. 
 
