@@ -141,20 +141,24 @@ https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook
 https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/java/codeurjc/service
 https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/resources/templates
 
-#JESÚS PÉREZ SÁNCHEZ
+#JESÚS PÉREZ SÁNCHEZ#
 - Durante la realización de la fase 2, he trabajado mayoritariamente en la realización de los distintos templates de la aplicación, también he trabajado en la creación de entidades (concrétamente user, book y author) y en los controladores con métodos para crear un libro y crear un autor. 
 
 **5 commits principales**
 
-NEW BOOK V1 - 1be99a7b176147072031cc6dd095159c94cf94f1
-imagenes libro funciona - 593366c54e6d6225616d9f6d38206ea107575601
-MySQL funciona (por fin xD) - 80a86bd3665324e50bd7394d63c3f23e8a319dc4
-Book Model - 9eeb39b6a40b3d3e03758a8c5daf987918a9fa74
-authorMod - b77869a75ad14830235227de73eb459d9e7bd48c
+* NEW BOOK V1 - 1be99a7b176147072031cc6dd095159c94cf94f1
+
+* imagenes libro funciona - 593366c54e6d6225616d9f6d38206ea107575601
+
+* MySQL funciona (por fin xD) - 80a86bd3665324e50bd7394d63c3f23e8a319dc4
+
+* Book Model - 9eeb39b6a40b3d3e03758a8c5daf987918a9fa74
+
+* authorMod - b77869a75ad14830235227de73eb459d9e7bd48c
 
 **5 ficheros donde más he trabajado**
-AuthorController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/AuthorController.java
-BookController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/BookController.java
-UserController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/UserControler.java
-Author - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Book.java
-Book - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Author.java
+* AuthorController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/AuthorController.java
+* BookController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/BookController.java
+* UserController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/UserControler.java
+* Author - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Book.java
+* Book - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Author.java
