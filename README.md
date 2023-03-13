@@ -120,11 +120,17 @@ Habilitar una sección de recomedados para aquellos usuarios que compraron o tie
 #Laila El Khattabi El Hassnaoui 
 -Durante la realizacón de la fase 2 he colaborado en la realización y edición de los templates, por otra parte he trabajado  con los controladores para el correcto de funcionamiento de la página  e inicializado de los objetos de la base de datos.
 **5 commits principales
+
 e2897fd5728b65a7765211f47bd2cdccdf00fe72
+
 a21a888ecb0e471fc88db81f82cdddc4c71c86fe
+
 5f42a2c47abb1459394838055160863bfc54f772
+
 2281b888f69dc7121e26b3d197784e44ea7c69b5
+
 4a3f154c0e12c9c2fddbd6e200aa1dd4857549d6
+
 **5 ficheros en los que más he trabajado
 https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/java/codeurjc/controller
 https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/java/codeurjc/model
