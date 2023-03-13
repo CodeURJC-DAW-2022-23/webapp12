@@ -98,18 +98,18 @@ Habilitar una sección de recomedados para aquellos usuarios que compraron o tie
 
 
 
-![diagram de navegacion completo](https://user-images.githubusercontent.com/123741250/218428540-8080e049-ea30-4d82-8f57-f911f9dae78c.png)
+![diagrama de navegacion completo](https://user-images.githubusercontent.com/123741250/218428540-8080e049-ea30-4d82-8f57-f911f9dae78c.png)
 
  ###FASE 2 
  
  * Navegación
  
+![diagrama de navegación] <img width="1258" alt="Mapa de Navegación Fase 2 DAW" src="https://user-images.githubusercontent.com/80918031/224648727-1c59b538-d743-43f9-9118-a46c3820eb67.png">
+
+ 
  * Instrucciones de ejecución 
  
  * Diagrama de entidades de la base de datos 
- 
-
-
 
 ![DIAGRAMA DE BBDD](https://user-images.githubusercontent.com/123741250/224628859-d0a22e8f-5c7c-4a4e-8fe8-1e4eb3f21d57.PNG)
 
@@ -161,4 +161,19 @@ https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook
 * BookController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/BookController.java
 * UserController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/UserControler.java
 * Author - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Book.java
+* Book - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Author.java
+
+#Paula Monrobel Ugidos
+- Durante la realización de la fase 2 he trabajado en la parte de seguridad de la aplicación y en la inicialización de la Base de Datos con todos los Autores y Libros.
+**5 commits principales
+* Paginas publicas y privadas, admin en properties - ecab5721313de5b818fef23f8a40e69542712ab0
+* User y admin en Base de Datos funcionales - 34adc36987244e95100b326faef86edbdc819929
+* CSRF - 112607677ea96b271148e7b02263bf1f41c1b562
+* Datos Inicio Base de Datos - d76ed8a9a4a32b47500e8fd977956168b56cf6a1
+* Comunicación cifrada y puerto 8443 - 2306d97a6ff56e2801466a33a4c9ff023ef21e79
+**5 ficheros donde más he trabajado
+* DBIni - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/service/DBIni.java
+* RepositoryUserDetailsService - https://github.com/CodeURJC-DAW-2022 23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/service/RepositoryUserDetailsService.java
+* CSRFHandlerConfiguration - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/security/CSRFHandlerConfiguration.java
+* securityConfiguration - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/security/securityConfiguration.java
 * Book - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Author.java
