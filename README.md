@@ -230,8 +230,9 @@ ce89a68dafab135ac4b82dff02b23e61d812d1f9
 
 · https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/resources/static/js/CargarMas.js (intenté hacer el js pero no termina funcionando bien)
 
-# XAVIER MEDINA SALAS
-- Durante la realización de la fase 2, he trabajado en la realización de los varios templates de la aplicación como home, book y header, después he trabajado en la creación de entidad de book, user y review. Para finalizar en los controladores con métodos para crear un libro y crear un review. 
+# Xavier Medina Salas
+
+· Durante la realización de la fase 2, he trabajado en la realización de los varios templates de la aplicación como home, book y header, después he trabajado en la creación de entidad de book, user y review. Para finalizar en los controladores con métodos para crear un libro y crear un review. 
 
 ** 5 commits principales
 
