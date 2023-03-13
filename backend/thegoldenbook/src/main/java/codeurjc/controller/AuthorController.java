@@ -71,7 +71,7 @@ public class AuthorController{
     
         model.addAttribute("id", author.getId());
     
-        return "redirect:/home";
+        return "redirect:/author";
     }
 
     @GetMapping("auhtor/{id}/image")

@@ -6,9 +6,9 @@
             <div class="col-12">
                 <input type="text" name="title" placeholder="Titulo">
             </div>
-            <div class="col-12">
+            <!--<div class="col-12">
                 <input type="text" name="author" placeholder="Autor">
-            </div>
+            </div>-->
             <div class="col-12">
                 <input type="text" name="price" placeholder="Precio">
             </div>
@@ -20,13 +20,16 @@
             </div>
             <div class="col-12">
                 <label for="myfile">Imagen:</label>
-                <input type="file" id="myfile" name="imageField" accept=".jpg .jepg">
+                <input type="file" id="myfile" name="imageField" accept=".jpg .jpeg">
             </div>
-            <div>
-                <input type="submit" value="Guardar">
+            <div class="col-6 container-button">
+                <input type="submit" value="Cancelar" class="button" id="cancel">
+                </div>
+            <div class="col-6 container-button">
+                <input type="submit" value="Aceptar" class="button" id="accept" >
             </div>
             <input type="hidden" name="_csrf" value="{{token}}">
         </div>
-     </form>
+        </form>
     </div>
 {{>Footer}}

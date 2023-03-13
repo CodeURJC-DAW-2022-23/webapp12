@@ -76,12 +76,12 @@ public class BookController{
         book.setImageFile(BlobProxy.generateProxy(imageField.getInputStream(), imageField.getSize()));
         book.setImage(true);
       }
-  
+      
       book_repository.save(book);
   
       model.addAttribute("id", book.getId());
   
-      return "redirect:/home";
+      return "redirect:/book";
     }
     
     @GetMapping("/{id}/image")
