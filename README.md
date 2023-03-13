@@ -128,10 +128,13 @@ Contraseña de MySQL: macarrones
 ![image](https://user-images.githubusercontent.com/103439723/224640172-9296fdd4-4ce4-4a03-baf3-989132cd174e.png)
 
 
-*Participación de miembros
-#Laila El Khattabi El Hassnaoui 
+* Participación de miembros
+
+# Laila El Khattabi El Hassnaoui 
+
 -Durante la realizacón de la fase 2 he colaborado en la realización y edición de los templates, por otra parte he trabajado  con los controladores para el correcto de funcionamiento de la página  e inicializado de los objetos de la base de datos.
-**5 commits principales
+
+** 5 commits principales
 
 e2897fd5728b65a7765211f47bd2cdccdf00fe72
 
@@ -143,17 +146,17 @@ a21a888ecb0e471fc88db81f82cdddc4c71c86fe
 
 4a3f154c0e12c9c2fddbd6e200aa1dd4857549d6
 
-**5 ficheros en los que más he trabajado
+** 5 ficheros en los que más he trabajado
 https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/java/codeurjc/controller
 https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/java/codeurjc/model
 https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/java/codeurjc/repository
 https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/java/codeurjc/service
 https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/resources/templates
 
-#JESÚS PÉREZ SÁNCHEZ#
+# JESÚS PÉREZ SÁNCHEZ
 - Durante la realización de la fase 2, he trabajado en la realización de los distintos templates de la aplicación, pero mayoritariamente he trabajado en la creación de entidades (concrétamente user, book y author) y en los controladores con métodos para crear un libro y crear un autor. 
 
-**5 commits principales**
+** 5 commits principales
 
 * NEW BOOK V1 - 1be99a7b176147072031cc6dd095159c94cf94f1
 
@@ -165,24 +168,46 @@ https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook
 
 * authorMod - b77869a75ad14830235227de73eb459d9e7bd48c
 
-**5 ficheros donde más he trabajado**
+** 5 ficheros donde más he trabajado
 * AuthorController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/AuthorController.java
 * BookController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/BookController.java
 * UserController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/UserControler.java
 * Author - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Book.java
 * Book - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Author.java
 
-#Paula Monrobel Ugidos
+# Paula Monrobel Ugidos
 - Durante la realización de la fase 2 he trabajado en la parte de seguridad de la aplicación y en la inicialización de la Base de Datos con todos los Autores y Libros.
-**5 commits principales**
+
+** 5 commits principales
+
 * Paginas publicas y privadas, admin en properties - ecab5721313de5b818fef23f8a40e69542712ab0
+
 * User y admin en Base de Datos funcionales - 34adc36987244e95100b326faef86edbdc819929
+
 * CSRF - 112607677ea96b271148e7b02263bf1f41c1b562
+
 * Datos Inicio Base de Datos - d76ed8a9a4a32b47500e8fd977956168b56cf6a1
+
 * Comunicación cifrada y puerto 8443 - 2306d97a6ff56e2801466a33a4c9ff023ef21e79
-**5 ficheros donde más he trabajado**
+
+** 5 ficheros donde más he trabajado
+
 * DBIni - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/service/DBIni.java
+
 * RepositoryUserDetailsService - https://github.com/CodeURJC-DAW-2022 23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/service/RepositoryUserDetailsService.java
+
 * CSRFHandlerConfiguration - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/security/CSRFHandlerConfiguration.java
+
 * securityConfiguration - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/security/securityConfiguration.java
+
 * Book - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Author.java
+
+# Gabriel Serrano Díaz
+
+• Mi trabajo en la segunda fase se ha basado en el desarrollo de templates, el desarrollo de los controladores y repositorios de book y Author (y de profule aunque no se muestre correctamente) y el intento en AJAX.
+
+** 5 commits más importantes
+
+** 5 ficheros más trabajados
+
+
