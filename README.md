@@ -107,8 +107,17 @@ Habilitar una sección de recomedados para aquellos usuarios que compraron o tie
 <img width="1258" alt="Mapa de Navegación Fase 2 DAW" src="https://user-images.githubusercontent.com/80918031/224648727-1c59b538-d743-43f9-9118-a46c3820eb67.png">
 
  
- * Instrucciones de ejecución 
- 
+ * Instrucciones de ejecución
+
+Version de Java 17
+Versión de SpringBoot: 2.4.4
+Base de datos empleada: MySQL
+Esquema: GoldenSchema
+Usuario de MySQL: root
+Contraseña de MySQL: macarrones
+
+• Para iniciar la aplicación, ejecuta Thegoldenbook.java y accede a la dirección https/localhost/8443 en tu dispositivo.
+
  * Diagrama de entidades de la base de datos 
 
 ![DIAGRAMA DE BBDD](https://user-images.githubusercontent.com/123741250/224628859-d0a22e8f-5c7c-4a4e-8fe8-1e4eb3f21d57.PNG)
