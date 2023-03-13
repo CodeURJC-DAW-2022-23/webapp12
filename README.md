@@ -100,13 +100,13 @@ Habilitar una sección de recomedados para aquellos usuarios que compraron o tie
 
 ![diagram de navegacion completo](https://user-images.githubusercontent.com/123741250/218428540-8080e049-ea30-4d82-8f57-f911f9dae78c.png)
 
- --FASE 2 
+ ###FASE 2 
  
- *Navegación
+ * Navegación
  
- *Instrucciones de ejecución 
+ * Instrucciones de ejecución 
  
- *Diagrama de entidades de la base de datos 
+ * Diagrama de entidades de la base de datos 
  
 
 
@@ -114,7 +114,10 @@ Habilitar una sección de recomedados para aquellos usuarios que compraron o tie
 ![DIAGRAMA DE BBDD](https://user-images.githubusercontent.com/123741250/224628859-d0a22e8f-5c7c-4a4e-8fe8-1e4eb3f21d57.PNG)
 
 
-*Diagrama de clases y templates
+* Diagrama de clases y templates
+
+![image](https://user-images.githubusercontent.com/103439723/224640172-9296fdd4-4ce4-4a03-baf3-989132cd174e.png)
+
 
 *Participación de miembros
 #Laila El Khattabi El Hassnaoui 
