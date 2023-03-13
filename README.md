@@ -208,7 +208,27 @@ https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook
 
 ** 5 commits más importantes
 
+ce89a68dafab135ac4b82dff02b23e61d812d1f9
+
+828e6f00df903a4094aa75d0759c7967d4d1bc00
+
+245e649597223cddc671f475c20345e878a7ae42
+
+567adceae8fe6f07e92dea32da875d815984187b
+
+27408d160b7f4054a22586fe918af563a7cb8ee1
+
 ** 5 ficheros más trabajados
+
+· https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/AuthorController.java
+
+· https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/BookController.java
+
+· https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/CargarMasController.java
+
+· https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/resources/templates (En general en la mayoría de templates)
+
+· https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/resources/static/js/CargarMas.js (intenté hacer el js pero no termina funcionando bien)
 
 # XAVIER MEDINA SALAS
 - Durante la realización de la fase 2, he trabajado en la realización de los varios templates de la aplicación como home, book y header, después he trabajado en la creación de entidad de book, user y review. Para finalizar en los controladores con métodos para crear un libro y crear un review. 
