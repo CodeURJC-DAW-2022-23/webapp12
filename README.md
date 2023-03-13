@@ -210,4 +210,27 @@ https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook
 
 ** 5 ficheros más trabajados
 
+# XAVIER MEDINA SALAS
+- Durante la realización de la fase 2, he trabajado en la realización de los varios templates de la aplicación como home, book y header, después he trabajado en la creación de entidad de book, user y review. Para finalizar en los controladores con métodos para crear un libro y crear un review. 
+
+** 5 commits principales
+
+* cambios en cartController - e617834a406276fc694c24192869a2c34aa0d740
+
+* imagenes libro funciona - 593366c54e6d6225616d9f6d38206ea107575601
+
+* v1 de ReviewRepository - 076aa7a284a79bc858f5ca1b4db76163b1fcccd2
+
+* version casi final de user - 6c4c5ef02e1e4971a42b48b0bc3c748669477836
+
+* añadiendo nuevos templates de book y books- 7e1f2ca5c12aec427fb7c04ded646546687b9c03
+
+** 5 ficheros donde más he trabajado
+* AuthorController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/ReviewController.java
+* BookController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/BookController.java
+* UserController - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/controller/UserControler.java
+* Author - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/Book.java
+* Book - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/model/User.java
+
+
 
