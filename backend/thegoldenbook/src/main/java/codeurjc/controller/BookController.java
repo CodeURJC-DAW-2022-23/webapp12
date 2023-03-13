@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.security.web.csrf.CsrfToken;
 
 
 import codeurjc.model.Book;
@@ -44,8 +43,6 @@ public class BookController{
 
     @GetMapping("/home")
     public String book(Model model, HttpServletRequest request){
-      CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-		  model.addAttribute("token", token.getToken());
       model.addAttribute("admin", request.isUserInRole("ADMIN"));
       model.addAttribute("bookList", book_repository.findAll());
       return "home";
@@ -63,8 +60,6 @@ public class BookController{
 
     @GetMapping("/newBook")
     public String newBook(Model model, HttpServletRequest request){
-      CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-      model.addAttribute("token", token.getToken());
       model.addAttribute("admin", request.isUserInRole("ADMIN"));
       return "newBook";
     }

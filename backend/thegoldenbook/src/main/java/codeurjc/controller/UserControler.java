@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.security.web.csrf.CsrfToken;
-
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
@@ -41,8 +39,6 @@ public class UserControler {
 
     @GetMapping("/login")
     public String login(Model model, HttpServletRequest request){
-        CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-        model.addAttribute("token", token.getToken());
         model.addAttribute("admin", request.isUserInRole("ADMIN"));
         return "login";
     }
@@ -56,8 +52,6 @@ public class UserControler {
 
     @GetMapping("/register")
     public String register (Model model, HttpServletRequest request){
-        CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-        model.addAttribute("token", token.getToken());
         model.addAttribute("admin", request.isUserInRole("ADMIN"));
             return "register";
     }
@@ -73,8 +67,6 @@ public class UserControler {
 
     @GetMapping("/profile")
     public String clientProfile(Model model, HttpServletRequest request) {
-        CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-        model.addAttribute("token", token.getToken());
         model.addAttribute("admin", request.isUserInRole("ADMIN"));
         String name = request.getUserPrincipal().getName();
         User user = user_repository.findByUser(name);
@@ -86,8 +78,6 @@ public class UserControler {
 
     @GetMapping("/profileModification")
     public String profileModification (Model model, HttpServletRequest request){ 
-      CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-      model.addAttribute("token", token.getToken());
       String name = request.getUserPrincipal().getName();
       User user = user_repository.findByUser(name);
       model.addAttribute("user", user.getUser());
