@@ -195,7 +195,7 @@ https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook
 
 * DBIni - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/service/DBIni.java
 
-* RepositoryUserDetailsService - https://github.com/CodeURJC-DAW-2022 23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/service/RepositoryUserDetailsService.java
+* RepositoryUserDetailsService - https://github.com/CodeURJC-DAW-2022- 23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/service/RepositoryUserDetailsService.java
 
 * CSRFHandlerConfiguration - https://github.com/CodeURJC-DAW-2022-23/webapp12/blob/main/backend/thegoldenbook/src/main/java/codeurjc/security/CSRFHandlerConfiguration.java
 
