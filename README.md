@@ -100,7 +100,34 @@ Habilitar una sección de recomedados para aquellos usuarios que compraron o tie
 
 ![diagram de navegacion completo](https://user-images.githubusercontent.com/123741250/218428540-8080e049-ea30-4d82-8f57-f911f9dae78c.png)
 
+ --FASE 2 
+ 
+ *Navegación
+ 
+ *Instrucciones de ejecución 
+ 
+ *Diagrama de entidades de la base de datos 
  
 
 
 
+![DIAGRAMA DE BBDD](https://user-images.githubusercontent.com/123741250/224628859-d0a22e8f-5c7c-4a4e-8fe8-1e4eb3f21d57.PNG)
+
+
+*Diagrama de clases y templates
+
+*Participación de miembros
+#Laila El Khattabi El Hassnaoui 
+-Durante la realizacón de la fase 2 he colaborado en la realización y edición de los templates, por otra parte he trabajado  con los controladores para el correcto de funcionamiento de la página  e inicializado de los objetos de la base de datos.
+**5 commits principales
+e2897fd5728b65a7765211f47bd2cdccdf00fe72
+a21a888ecb0e471fc88db81f82cdddc4c71c86fe
+5f42a2c47abb1459394838055160863bfc54f772
+2281b888f69dc7121e26b3d197784e44ea7c69b5
+4a3f154c0e12c9c2fddbd6e200aa1dd4857549d6
+**5 ficheros en los que más he trabajado
+https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/java/codeurjc/controller
+https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/java/codeurjc/model
+https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/java/codeurjc/repository
+https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/java/codeurjc/service
+https://github.com/CodeURJC-DAW-2022-23/webapp12/tree/main/backend/thegoldenbook/src/main/resources/templates
