@@ -19,6 +19,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
+import ch.qos.logback.core.joran.conditional.ElseAction;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import java.util.Optional;
@@ -58,11 +60,16 @@ public class UserControler {
 
     
     @PostMapping("/register")
-    public String newUser(Model model, @RequestParam String user, @RequestParam String password) throws IOException{
+    public String newUser(Model model, @RequestParam String user, @RequestParam String password, @RequestParam String confirmation ) throws IOException{
         //if para comprobar que las dos contraseñas son iguales
-        User usr = new User(user, passwordEncoder.encode(password), "USER");
-        user_repository.save(usr);
-        return "/home";
+        if(password.equals(confirmation) && user_repository.findByUser(user) == null){
+            User usr = new User(user, passwordEncoder.encode(password), "USER");
+            user_repository.save(usr);
+            return "/home";
+        }
+        else
+            return "/registerError";
+        
     }
 
     @GetMapping("/profile")
