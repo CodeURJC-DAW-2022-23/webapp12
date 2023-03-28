@@ -14,6 +14,8 @@ import codeurjc.model.Author;
 import codeurjc.repository.AuthorRepository;
 import codeurjc.model.Book;
 import codeurjc.repository.BookRepository;
+import codeurjc.model.Review;
+//import codeurjc.repository.ReviewRepository;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.hibernate.engine.jdbc.BlobProxy;
@@ -111,6 +113,11 @@ public class DBIni {
         bookRepository.save(book10);
         bookRepository.save(book11);
         bookRepository.save(book12);
+
+        //Review
+        
+
+
     }
 
     public void setAuthorImage(Author author, String classpathResource){

@@ -71,7 +71,7 @@ public class AuthorController{
         return "redirect:/author";
     }
 
-    @GetMapping("auhtor/{id}/image")
+    @GetMapping("author/{id}/image")
     public ResponseEntity<Object> downloadImage(@PathVariable long id) throws SQLException, IOException {
 
         Optional<Author> author = author_repository.findById(id);
@@ -79,8 +79,7 @@ public class AuthorController{
 
             InputStreamResource file = new InputStreamResource(author.get().getImageFile().getBinaryStream());
 
-            return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, "image/jpeg", "image/jpg")
-                  .contentLength(author.get().getImageFile().length()).body(file);
+            return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, "image/jpeg", "image/jpg").contentLength(author.get().getImageFile().length()).body(file);
 
         } else {
             return ResponseEntity.notFound().build();
