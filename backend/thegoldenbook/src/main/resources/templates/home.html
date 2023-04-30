@@ -11,7 +11,8 @@
     <hr/>
     <div class="recomendationSet flex-container display-4">
                 {{#bookList}}
-                <div>
+                <div name="libros">
+
                     {{#image}}
                     <img src="/{{id}}/image" class="image">
                     {{/image}}
@@ -71,4 +72,5 @@
     <img src="images/fondo-inicio.jpg" class="homeBottomImage" alt="">
 
 {{>footer}}
+<script src="/js/loadMore.js"></script>
 
