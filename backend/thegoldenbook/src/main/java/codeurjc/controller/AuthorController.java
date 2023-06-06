@@ -4,6 +4,7 @@ import java.io.IOException;
 import org.springframework.http.HttpHeaders;
 import java.sql.SQLException;
 import java.util.Optional;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -24,11 +25,15 @@ import org.springframework.web.multipart.MultipartFile;
 import codeurjc.model.Author;
 import codeurjc.model.Book;
 import codeurjc.repository.AuthorRepository;
+import codeurjc.repository.BookRepository;
 
 
 @Controller
 public class AuthorController{
 
+    @Autowired
+    private BookRepository book_repository;
+  
     @Autowired
     private AuthorRepository author_repository;
 
@@ -39,15 +44,19 @@ public class AuthorController{
         return "authorList";
     }
 
-    @GetMapping("/author/{id}")
-    public String showAuthor(Model model, @PathVariable long id, HttpServletRequest request){
-        model.addAttribute("admin", request.isUserInRole("ADMIN"));
 
-        Optional<Author> author = author_repository.findById(id);
-        if (author.isPresent()){
-            model.addAttribute("author", author.get());
-        }
-        return "author";
+    @GetMapping("/author/{id}")
+    public String showAuthor(Model model, @PathVariable long id, HttpServletRequest request) {
+      model.addAttribute("admin", request.isUserInRole("ADMIN"));
+      Optional<Author> author = author_repository.findById(id);
+      if (author.isPresent()) {
+        model.addAttribute("author", author.get());
+  
+        // Obtener las estadísticas de libros por autor
+        List<Author> authorStatsList = book_repository.countBooksByAuthor();
+        model.addAttribute("authorStatsList", authorStatsList);
+      }
+      return "author";
     }
 
     @GetMapping("/authorModification")
@@ -83,6 +92,7 @@ public class AuthorController{
 
         } else {
             return ResponseEntity.notFound().build();
-        }
+        }  
   }
+
 } 
